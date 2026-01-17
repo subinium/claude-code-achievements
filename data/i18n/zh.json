@@ -6,7 +6,8 @@
     "locked": "未解锁",
     "progress": "进度",
     "tip": "提示",
-    "hint": "线索"
+    "hint": "线索",
+    "triggered_by": "触发条件"
   },
   "categories": {
     "basics": {
@@ -156,6 +157,11 @@
       "name": "沟通者",
       "description": "向用户询问澄清问题",
       "tip": "Claude 可以在任务中向你提问！适合澄清需求或在选项间做选择。"
+    },
+    "plugin_installer": {
+      "name": "插件探索者",
+      "description": "从市场安装插件",
+      "tip": "使用 /plugin 从 claude-plugins-official 安装插件，扩展 Claude 的能力！"
     }
   }
 }

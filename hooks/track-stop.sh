@@ -41,4 +41,33 @@ if [[ "${RALPH_ACTIVE}" == "true" ]]; then
     fi
 fi
 
+# Check for marketplace plugin installation (plugin_installer achievement)
+# /plugin command installs plugins internally without using Write tool
+SETTINGS_FILE="${HOME}/.claude/settings.json"
+if [[ -f "${SETTINGS_FILE}" ]]; then
+    # Check if any @claude-plugins-official plugin is installed
+    if grep -q '@claude-plugins-official' "${SETTINGS_FILE}" 2>/dev/null; then
+        # Check if not already unlocked
+        if ! jq -e '.achievements["plugin_installer"].unlocked == true' "${STATE_FILE}" > /dev/null 2>&1; then
+            # Get language preference
+            LANG_PREF=$(jq -r '.settings.language // "en"' "${STATE_FILE}" 2>/dev/null || echo "en")
+
+            # Determine trigger message based on language
+            case "${LANG_PREF}" in
+                ko) TRIGGER_MSG="마켓플레이스에서 플러그인 설치" ;;
+                zh) TRIGGER_MSG="从市场安装插件" ;;
+                ja) TRIGGER_MSG="マーケットプレイスからプラグインをインストール" ;;
+                es) TRIGGER_MSG="Plugin instalado desde marketplace" ;;
+                *) TRIGGER_MSG="Installed plugin from marketplace" ;;
+            esac
+
+            "${PLUGIN_ROOT}/scripts/show-notification.sh" "plugin_installer" "${TRIGGER_MSG}"
+            temp_file=$(mktemp)
+            timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+            jq ".achievements[\"plugin_installer\"] = {\"unlocked\": true, \"unlockedAt\": \"${timestamp}\"}" "${STATE_FILE}" > "${temp_file}"
+            mv "${temp_file}" "${STATE_FILE}"
+        fi
+    fi
+fi
+
 exit 0

@@ -6,7 +6,8 @@
     "locked": "Locked",
     "progress": "Progress",
     "tip": "Tip",
-    "hint": "Hint"
+    "hint": "Hint",
+    "triggered_by": "Triggered by"
   },
   "categories": {
     "basics": {
@@ -156,6 +157,11 @@
       "name": "Communicator",
       "description": "Ask clarifying questions to the user",
       "tip": "Claude can ask you questions mid-task! Great for clarifying requirements or choosing between options."
+    },
+    "plugin_installer": {
+      "name": "Plugin Explorer",
+      "description": "Install a plugin from the marketplace",
+      "tip": "Use /plugin to browse and install from claude-plugins-official. Extend Claude's capabilities!"
     }
   }
 }

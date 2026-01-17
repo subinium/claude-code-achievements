@@ -229,6 +229,14 @@
       "tip": "Claude can ask you questions mid-task! Great for clarifying requirements or choosing between options.",
       "category": "workflow",
       "icon": "🗣️"
+    },
+    "plugin_installer": {
+      "id": "plugin_installer",
+      "name": "Plugin Explorer",
+      "description": "Install a plugin from the marketplace",
+      "tip": "Use /plugin to browse and install from claude-plugins-official. Extend Claude's capabilities!",
+      "category": "tools",
+      "icon": "🧩"
     }
   }
 }

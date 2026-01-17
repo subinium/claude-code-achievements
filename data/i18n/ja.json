@@ -6,7 +6,8 @@
     "locked": "ロック中",
     "progress": "進捗",
     "tip": "ヒント",
-    "hint": "ヒント"
+    "hint": "ヒント",
+    "triggered_by": "トリガー"
   },
   "categories": {
     "basics": {
@@ -156,6 +157,11 @@
       "name": "コミュニケーター",
       "description": "ユーザーに確認の質問をする",
       "tip": "Claude はタスク中に質問できます！要件の明確化やオプション選択に便利。"
+    },
+    "plugin_installer": {
+      "name": "プラグイン探検家",
+      "description": "マーケットプレイスからプラグインをインストール",
+      "tip": "/plugin で claude-plugins-official からインストール。Claude の機能を拡張！"
     }
   }
 }

@@ -18,8 +18,9 @@ Display Claude Code achievements progress. Output directly in your response (not
 ### Step 1: Read Data
 
 Use the Read tool to read these files:
-- `~/.claude/plugins/local/claude-code-achievements/data/achievements.json`
-- `~/.claude/achievements/state.json`
+- `~/.claude/achievements/state.json` (check settings.language for user's language preference)
+- `~/.claude/plugins/local/claude-code-achievements/data/achievements.json` (default data with icons, categories)
+- `~/.claude/plugins/local/claude-code-achievements/data/i18n/{language}.json` (localized name, description, tip)
 
 ### Step 2: Format Output
 
@@ -31,10 +32,18 @@ Use the Read tool to read these files:
 ▰▰▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱
 
 ✓ Unlocked
-  ✏️ First Touch — Edit a file with Claude's help
-  📝 Creator — Create a new file
-  🔍 Code Detective — Search codebase with Glob or Grep
-  🤖 Delegation Master — Use Task tool to spawn sub-agents
+
+✏️ **First Touch** — Edit a file with Claude's help
+   💡 Be specific: instead of 'fix the bug', say 'fix the TypeError in login.js line 42'
+
+📝 **Creator** — Create a new file
+   💡 Claude can create entire files from description. Try: 'Create a React component for a login form'
+
+🔍 **Code Detective** — Search codebase with Glob or Grep
+   💡 Glob finds files by pattern, Grep searches content. Faster than manual searching!
+
+🤖 **Delegation Master** — Use Task tool to spawn sub-agents
+   💡 Task tool creates specialized agents for complex work. Great for parallel exploration.
 ```
 
 #### Locked View (/achievements locked)
@@ -64,13 +73,15 @@ Use the Read tool to read these files:
 ```
 
 Rules:
-- ✓ = unlocked (icon + name + description)
-- ○ = locked (icon + name + description)
-- Keep it compact and readable
+- ✓ = unlocked: icon + **name** (bold) + description + 💡 tip
+- ○ = locked: icon + name + description only
+- Tips should be informative but concise (1-2 sentences max)
+- Group by category when showing all
+- Use proper spacing for readability
 
 ### Step 3: Suggest Next
 
-For unlocked/locked views, suggest ONE easy achievement to unlock next.
+For unlocked/locked views, suggest ONE easy achievement to unlock next with a brief actionable hint.
 
 ## Hint Mode (/achievements hint)
 

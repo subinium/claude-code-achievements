@@ -18,6 +18,7 @@ C_SUCCESS='\033[32m'
 C_BORDER='\033[90m'
 
 ACHIEVEMENT_ID="$1"
+TRIGGER="$2"
 
 if [[ -z "${ACHIEVEMENT_ID}" ]]; then
     exit 1
@@ -43,13 +44,22 @@ CUSTOM_ICON="${PLUGIN_ROOT}/assets/icon.png"
 TOTAL=$(jq '.achievements | length' "${ACHIEVEMENTS_FILE}")
 UNLOCKED=$(jq '.achievements | to_entries | map(select(.value.unlocked == true)) | length' "${STATE_FILE}")
 
-# Get localized name, description and UI text
+# Get localized name, description, tip and UI text
 I18N_FILE="${PLUGIN_ROOT}/data/i18n/${LANG}.json"
+UNLOCKED_TITLE="Achievement Unlocked!"
 UNLOCKED_TEXT="unlocked"
+TIP_LABEL="💡 Tip"
+TRIGGER_LABEL="🎯 Triggered by"
 if [[ -f "${I18N_FILE}" ]]; then
     NAME=$(jq -r ".achievements[\"${ACHIEVEMENT_ID}\"].name // empty" "${I18N_FILE}")
     DESC=$(jq -r ".achievements[\"${ACHIEVEMENT_ID}\"].description // empty" "${I18N_FILE}")
+    TIP=$(jq -r ".achievements[\"${ACHIEVEMENT_ID}\"].tip // empty" "${I18N_FILE}")
+    UNLOCKED_TITLE=$(jq -r '.ui.unlocked // "Achievement Unlocked!"' "${I18N_FILE}")
     UNLOCKED_TEXT=$(jq -r '.ui.unlocked_count // "unlocked"' "${I18N_FILE}")
+    TIP_LABEL=$(jq -r '.ui.tip // "Tip"' "${I18N_FILE}")
+    [[ "${TIP_LABEL}" != "null" ]] && TIP_LABEL="💡 ${TIP_LABEL}"
+    TRIGGER_LABEL_TEXT=$(jq -r '.ui.triggered_by // "Triggered by"' "${I18N_FILE}")
+    [[ "${TRIGGER_LABEL_TEXT}" != "null" ]] && TRIGGER_LABEL="🎯 ${TRIGGER_LABEL_TEXT}"
 fi
 
 # Fall back to default if no translation
@@ -59,12 +69,15 @@ fi
 if [[ -z "${DESC}" ]]; then
     DESC=$(jq -r ".achievements[\"${ACHIEVEMENT_ID}\"].description // \"\"" "${ACHIEVEMENTS_FILE}")
 fi
+if [[ -z "${TIP}" ]]; then
+    TIP=$(jq -r ".achievements[\"${ACHIEVEMENT_ID}\"].tip // \"\"" "${ACHIEVEMENTS_FILE}")
+fi
 
 show_system_notification() {
     local OS="$(uname -s)"
-    local TITLE="${ICON} ${NAME}"
-    local BODY="${DESC}"
-    local SUBTITLE="${UNLOCKED}/${TOTAL} ${UNLOCKED_TEXT}"
+    local TITLE="★ ${UNLOCKED_TITLE}"
+    local SUBTITLE="${ICON} ${NAME} [${UNLOCKED}/${TOTAL}]"
+    local BODY="${TRIGGER}"
 
     case "${OS}" in
         Darwin)
@@ -97,14 +110,14 @@ show_system_notification() {
 
 show_terminal_notification() {
     {
-        echo ""
-        printf "${C_BORDER}╭────────────────────────────────────────────╮${RESET}\n"
-        printf "${C_BORDER}│${RESET}  ${C_SUCCESS}★${RESET} ${C_HEADER}${BOLD}ACHIEVEMENT UNLOCKED${RESET}                 ${C_BORDER}│${RESET}\n"
-        printf "${C_BORDER}├────────────────────────────────────────────┤${RESET}\n"
-        printf "${C_BORDER}│${RESET}  ${ICON} ${BOLD}${NAME}${RESET}\n"
-        printf "${C_BORDER}│${RESET}  ${DIM}${DESC}${RESET}\n"
-        printf "${C_BORDER}│${RESET}  ${BOLD}${UNLOCKED}${RESET}${DIM}/${TOTAL} ${UNLOCKED_TEXT}${RESET}\n"
-        printf "${C_BORDER}╰────────────────────────────────────────────╯${RESET}\n"
+        printf "\n${C_SUCCESS}★${RESET} ${C_HEADER}${BOLD}${UNLOCKED_TITLE}${RESET} ${ICON} ${BOLD}${NAME}${RESET} ${DIM}[${UNLOCKED}/${TOTAL}]${RESET}\n"
+        if [[ -n "${TRIGGER}" ]]; then
+            printf "  ${DIM}${TRIGGER}${RESET}\n"
+        fi
+        printf "\n"
+        if [[ -n "${TIP}" ]]; then
+            printf "  ${TIP_LABEL}: ${DIM}${TIP}${RESET}\n"
+        fi
         echo ""
     } >&2
 }
@@ -112,6 +125,8 @@ show_terminal_notification() {
 case "${NOTIFICATION_STYLE}" in
     system)
         show_system_notification
+        # Always show detailed tip in terminal for learning
+        show_terminal_notification
         ;;
     both)
         show_system_notification

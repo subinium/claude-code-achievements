@@ -6,7 +6,8 @@
     "locked": "Bloqueado",
     "progress": "Progreso",
     "tip": "Consejo",
-    "hint": "Pista"
+    "hint": "Pista",
+    "triggered_by": "Activado por"
   },
   "categories": {
     "basics": {
@@ -156,6 +157,11 @@
       "name": "Comunicador",
       "description": "Hacer preguntas de clarificación al usuario",
       "tip": "¡Claude puede hacerte preguntas durante una tarea! Ideal para clarificar requisitos o elegir entre opciones."
+    },
+    "plugin_installer": {
+      "name": "Explorador de Plugins",
+      "description": "Instalar un plugin del marketplace",
+      "tip": "Usa /plugin para instalar desde claude-plugins-official. Extiende las capacidades de Claude."
     }
   }
 }

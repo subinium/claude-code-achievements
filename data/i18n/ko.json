@@ -6,7 +6,8 @@
     "locked": "잠김",
     "progress": "진행 상황",
     "tip": "팁",
-    "hint": "힌트"
+    "hint": "힌트",
+    "triggered_by": "트리거"
   },
   "categories": {
     "basics": {
@@ -156,6 +157,11 @@
       "name": "소통의 달인",
       "description": "사용자에게 명확화 질문하기",
       "tip": "Claude가 작업 중 질문할 수 있어요! 요구사항 명확화나 옵션 선택에 유용합니다."
+    },
+    "plugin_installer": {
+      "name": "플러그인 탐험가",
+      "description": "마켓플레이스에서 플러그인 설치",
+      "tip": "/plugin으로 claude-plugins-official에서 플러그인을 설치하세요. Claude의 능력을 확장!"
     }
   }
 }
