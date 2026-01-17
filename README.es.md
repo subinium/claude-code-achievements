@@ -22,7 +22,7 @@
 
 ## Características
 
-- **26 Logros** en 4 categorías
+- **27 Logros** en 4 categorías
 - **Notificaciones en tiempo real** vía alertas del sistema o terminal
 - **Soporte multiidioma** (EN / 中文 / ES / 한국어 / 日本語)
 - **Multiplataforma** (macOS / Linux / Windows)
@@ -99,7 +99,7 @@ node bin/install.js
 </details>
 
 <details>
-<summary><b>Herramientas Avanzadas</b> (9 logros)</summary>
+<summary><b>Herramientas Avanzadas</b> (10 logros)</summary>
 
 | Logro | Cómo Desbloquear |
 |-------|------------------|
@@ -112,6 +112,7 @@ node bin/install.js
 | ⚙️ **Personalizador** | Modificar configuración de Claude Code |
 | 📜 **Creador de Skills** | Crear skill personalizado en `.claude/skills/` |
 | ⌨️ **Artesano de Comandos** | Crear comando slash personalizado |
+| 🧩 **Explorador de Plugins** | Instalar un plugin desde el marketplace |
 
 </details>
 

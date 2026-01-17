@@ -2,23 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.2.0] - 2025-01-17
-
-### Changed
-- **Installer now uses symlinks** instead of copying commands to `~/.claude/commands/`
-  - Commands auto-update when plugin updates
-  - Single source of truth
-- **Installer now registers hooks** in `~/.claude/settings.json` automatically
-  - No manual configuration needed
-  - Hooks use absolute paths for reliability
-- Supports both command styles:
-  - `/achievements` (short, via symlink)
-  - `/claude-code-achievements:achievements` (namespaced, plugin native)
-- Added `version` field to plugin.json
+## [1.2.1] - 2026-01-17
 
 ### Fixed
-- Commands not found after cleaning `~/.claude/commands/` directory
-- Hooks not triggering due to missing settings.json configuration
+- Updated CHANGELOG with correct 1.2.0 changes
+
+## [1.2.0] - 2026-01-17
+
+### Added
+- 🧩 **Plugin Explorer** achievement - Install a plugin from the marketplace using `/plugin`
+- Trigger messages in notifications showing what action unlocked each achievement
+- Full i18n support for notification text (EN, KO, ZH, ES, JA)
+
+### Changed
+- Compact terminal notifications (no more collapsed output)
+- `/achievements` command now shows tips for unlocked achievements
+- Plugin installation detected via Stop hook (checks settings.json for `@claude-plugins-official`)
+
+### Note
+- Version jump to 1.2.0 due to npm version management (1.1.1-1.1.5 were previously unpublished and cannot be reused)
 
 ## [1.1.5] - 2025-01-17
 
