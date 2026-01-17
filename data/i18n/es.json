@@ -78,11 +78,6 @@
       "description": "Buscar información en la web",
       "tip": "Claude puede buscar documentación actualizada, soluciones y APIs."
     },
-    "skill_invoker": {
-      "name": "Maestro de Habilidades",
-      "description": "Usar un comando slash skill",
-      "tip": "Los skills son atajos. Prueba /commit, /pr, /init. Crea skills personalizados en ~/.claude/commands/"
-    },
     "config_modifier": {
       "name": "Personalizador",
       "description": "Modificar configuración de Claude Code",

@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.2] - 2026-01-17
+
+### Removed
+- **Skill Master** (skill_invoker) achievement - detection was unreliable (now 26 achievements)
+
+### Fixed
+- Race condition in unlock_achievement with flock file locking
+- `/achievements` command now uses dynamic counting instead of hardcoded numbers
+- Category headers showing incorrect unlocked counts
+
 ## [1.2.1] - 2026-01-17
 
 ### Fixed

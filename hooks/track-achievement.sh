@@ -43,9 +43,16 @@ unlock_achievement() {
     local achievement_id="$1"
     local trigger="$2"
     local timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-    local temp_file=$(mktemp)
-    jq ".achievements[\"${achievement_id}\"] = {\"unlocked\": true, \"unlockedAt\": \"${timestamp}\"}" "${STATE_FILE}" > "${temp_file}"
-    mv "${temp_file}" "${STATE_FILE}"
+    local lock_file="${STATE_FILE}.lock"
+
+    # Use flock for atomic file operations (prevent race conditions)
+    (
+        flock -x 200 || exit 1
+        local temp_file=$(mktemp)
+        jq ".achievements[\"${achievement_id}\"] = {\"unlocked\": true, \"unlockedAt\": \"${timestamp}\"}" "${STATE_FILE}" > "${temp_file}"
+        mv "${temp_file}" "${STATE_FILE}"
+    ) 200>"${lock_file}"
+
     "${PLUGIN_ROOT}/scripts/show-notification.sh" "${achievement_id}" "${trigger}"
 }
 
@@ -239,10 +246,6 @@ check_achievements() {
 
         Skill)
             SKILL_NAME=$(echo "$TOOL_INPUT" | jq -r '.skill // empty')
-            if ! is_unlocked "skill_invoker"; then
-                unlock_achievement "skill_invoker" "Invoked /${SKILL_NAME} command"
-            fi
-
             # ralph_starter
             if [[ "${SKILL_NAME}" =~ ralph-loop|ralph ]]; then
                 if ! is_unlocked "ralph_starter"; then

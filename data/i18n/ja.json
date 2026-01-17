@@ -78,11 +78,6 @@
       "description": "Web で情報を検索",
       "tip": "Claude は最新のドキュメント、ソリューション、API を検索できます。"
     },
-    "skill_invoker": {
-      "name": "スキルマスター",
-      "description": "スラッシュコマンドスキルを使用",
-      "tip": "スキルはショートカット。/commit、/pr、/init を試そう。~/.claude/commands/ でカスタムスキルも作れます。"
-    },
     "config_modifier": {
       "name": "カスタマイザー",
       "description": "Claude Code の設定を変更",

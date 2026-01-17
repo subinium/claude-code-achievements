@@ -78,11 +78,6 @@
       "description": "Search the web for information",
       "tip": "Claude can search for latest docs, solutions, and APIs."
     },
-    "skill_invoker": {
-      "name": "Skill Master",
-      "description": "Use a slash command skill",
-      "tip": "Skills are shortcuts. Try /commit, /pr, /init. Create custom skills in ~/.claude/commands/"
-    },
     "config_modifier": {
       "name": "Customizer",
       "description": "Modify Claude Code settings",

@@ -78,11 +78,6 @@
       "description": "웹 검색하기",
       "tip": "Claude가 최신 문서, 솔루션, API를 검색할 수 있어요."
     },
-    "skill_invoker": {
-      "name": "스킬 마스터",
-      "description": "슬래시 명령 스킬 사용",
-      "tip": "/commit, /pr, /init 해보세요. ~/.claude/commands/에서 커스텀도 가능!"
-    },
     "config_modifier": {
       "name": "커스터마이저",
       "description": "Claude Code 설정 수정",

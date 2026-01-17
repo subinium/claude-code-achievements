@@ -22,13 +22,21 @@ Use the Read tool to read these files:
 - `~/.claude/plugins/local/claude-code-achievements/data/achievements.json` (default data with icons, categories)
 - `~/.claude/plugins/local/claude-code-achievements/data/i18n/{language}.json` (localized name, description, tip)
 
-### Step 2: Format Output
+### Step 2: Count Achievements
+
+**IMPORTANT: Calculate these counts from the JSON files, do NOT use hardcoded numbers!**
+
+1. **Total count**: Count all keys in `achievements.json` → `achievements` object
+2. **Unlocked count**: Count achievements in `state.json` → `achievements` object where `unlocked: true`
+3. **Per category**: Count achievements by their `category` field
+
+### Step 3: Format Output
 
 **IMPORTANT: Output directly in your response text, NOT via bash. Bash output gets collapsed.**
 
 #### Default View (unlocked)
 ```
-🎮 **Claude Code Achievements** — 4/28 unlocked (14%)
+🎮 **Claude Code Achievements** — {unlocked}/{total} unlocked ({percentage}%)
 ▰▰▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱
 
 ✓ Unlocked
@@ -37,55 +45,52 @@ Use the Read tool to read these files:
    💡 Be specific: instead of 'fix the bug', say 'fix the TypeError in login.js line 42'
 
 📝 **Creator** — Create a new file
-   💡 Claude can create entire files from description. Try: 'Create a React component for a login form'
-
-🔍 **Code Detective** — Search codebase with Glob or Grep
-   💡 Glob finds files by pattern, Grep searches content. Faster than manual searching!
-
-🤖 **Delegation Master** — Use Task tool to spawn sub-agents
-   💡 Task tool creates specialized agents for complex work. Great for parallel exploration.
+   💡 Claude can create entire files from description.
 ```
 
 #### Locked View (/achievements locked)
 ```
-🎮 **Claude Code Achievements** — 4/28 unlocked (14%)
+🎮 **Claude Code Achievements** — {unlocked}/{total} unlocked ({percentage}%)
 ▰▰▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱
 
 ○ Locked
   📋 Project Curator — Create CLAUDE.md for project context
   🎯 Strategic Thinker — Use Plan mode for complex tasks
-  📦 Version Controller — Commit changes with Claude
   ...
 ```
 
 #### All View (/achievements all)
-```
-🎮 **Claude Code Achievements** — 4/28 unlocked (14%)
+Show each category with unlocked/total count:
 
-**Getting Started**
-  ✓ ✏️ First Touch — Edit a file with Claude's help
-  ✓ 📝 Creator — Create a new file
+```
+🎮 **Claude Code Achievements** — {unlocked}/{total} unlocked ({percentage}%)
+
+**Getting Started** ({category_unlocked}/{category_total})
+  ✓ ✏️ **First Touch** — Edit a file with Claude's help
+  ✓ 📝 **Creator** — Create a new file
   ○ 📋 Project Curator — Create CLAUDE.md
 
-**Workflow**
-  ○ 🎯 Strategic Thinker — Use Plan mode
+**Workflow** ({category_unlocked}/{category_total})
+  ✓ 🎯 **Strategic Thinker** — Use Plan mode
+  ○ 📦 Version Controller — Commit changes with Claude
   ...
 ```
 
-Rules:
-- ✓ = unlocked: icon + **name** (bold) + description + 💡 tip
-- ○ = locked: icon + name + description only
-- Tips should be informative but concise (1-2 sentences max)
-- Group by category when showing all
-- Use proper spacing for readability
+### Formatting Rules
 
-### Step 3: Suggest Next
+- ✓ = unlocked: icon + **name** (bold) + description + 💡 tip
+- ○ = locked: icon + name (not bold) + description only
+- Category header: `**Category Name** (unlocked/total)` - count ONLY that category's achievements
+- Progress bar: 20 blocks, filled proportionally to percentage
+- Tips should be informative but concise (1-2 sentences max)
+
+### Step 4: Suggest Next
 
 For unlocked/locked views, suggest ONE easy achievement to unlock next with a brief actionable hint.
 
 ## Hint Mode (/achievements hint)
 
-Show tips for 2-3 locked achievements. Read the `tip` field from achievements.json:
+Show tips for 2-3 locked achievements:
 
 ```
 💡 **Tips to unlock more:**

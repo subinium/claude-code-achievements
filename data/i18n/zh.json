@@ -78,11 +78,6 @@
       "description": "搜索网络信息",
       "tip": "Claude 可以搜索最新文档、解决方案和 API。"
     },
-    "skill_invoker": {
-      "name": "技能大师",
-      "description": "使用斜杠命令技能",
-      "tip": "技能是快捷方式。试试 /commit、/pr、/init。在 ~/.claude/commands/ 创建自定义技能。"
-    },
     "config_modifier": {
       "name": "定制者",
       "description": "修改 Claude Code 设置",

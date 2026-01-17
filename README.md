@@ -22,7 +22,7 @@ Gamify your coding journey and unlock achievements as you master Claude Code fea
 
 ## Features
 
-- **27 Achievements** across 4 categories
+- **26 Achievements** across 4 categories
 - **Real-time notifications** via system alerts or terminal
 - **Multi-language support** (EN / 中文 / ES / 한국어 / 日本語)
 - **Cross-platform** (macOS / Linux / Windows)
@@ -99,7 +99,7 @@ node bin/install.js
 </details>
 
 <details>
-<summary><b>Power Tools</b> (10 achievements)</summary>
+<summary><b>Power Tools</b> (9 achievements)</summary>
 
 | Achievement | How to Unlock |
 |-------------|---------------|
@@ -108,7 +108,6 @@ node bin/install.js
 | 🤖 **Delegation Master** | Use `Task` tool for sub-agents |
 | 🔌 **MCP Pioneer** | Use any MCP tool |
 | 🌐 **Web Explorer** | Use `WebSearch` tool |
-| ⚡ **Skill Master** | Use slash command skills |
 | ⚙️ **Customizer** | Modify Claude Code settings |
 | 📜 **Skill Creator** | Create custom skill in `.claude/skills/` |
 | ⌨️ **Command Crafter** | Create custom slash command |
