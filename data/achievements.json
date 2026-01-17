@@ -1,0 +1,168 @@
+{
+  "rarities": {
+    "common": { "name": "Common", "color": "⬜", "order": 1 },
+    "uncommon": { "name": "Uncommon", "color": "🟩", "order": 2 },
+    "rare": { "name": "Rare", "color": "🟦", "order": 3 },
+    "epic": { "name": "Epic", "color": "🟪", "order": 4 },
+    "legendary": { "name": "Legendary", "color": "🟨", "order": 5 }
+  },
+  "categories": {
+    "basics": {
+      "name": "Getting Started",
+      "description": "First steps with Claude Code",
+      "order": 1
+    },
+    "workflow": {
+      "name": "Workflow",
+      "description": "Mastering development workflow",
+      "order": 2
+    },
+    "tools": {
+      "name": "Power Tools",
+      "description": "Using advanced Claude Code features",
+      "order": 3
+    },
+    "mastery": {
+      "name": "Mastery",
+      "description": "Expert-level usage",
+      "order": 4
+    }
+  },
+  "achievements": {
+    "first_edit": {
+      "id": "first_edit",
+      "name": "First Touch",
+      "description": "Edit a file with Claude's help",
+      "tip": "Be specific: instead of 'fix the bug', say 'fix the TypeError in login.js line 42'",
+      "category": "basics",
+      "rarity": "common",
+      "icon": "✏️"
+    },
+    "first_write": {
+      "id": "first_write",
+      "name": "Creator",
+      "description": "Create a new file",
+      "tip": "Claude can create entire files from description. Try: 'Create a React component for a login form'",
+      "category": "basics",
+      "rarity": "common",
+      "icon": "📝"
+    },
+    "claude_md_creator": {
+      "id": "claude_md_creator",
+      "name": "Project Curator",
+      "description": "Create CLAUDE.md for project context",
+      "tip": "CLAUDE.md helps Claude understand your project. Include: tech stack, coding style, important files, and common commands.",
+      "category": "basics",
+      "rarity": "uncommon",
+      "icon": "📋"
+    },
+    "plan_mode_user": {
+      "id": "plan_mode_user",
+      "name": "Strategic Thinker",
+      "description": "Use Plan mode for complex tasks",
+      "tip": "Press Shift+Tab twice to enter Plan mode. Great for architecture decisions and multi-step tasks.",
+      "category": "workflow",
+      "rarity": "uncommon",
+      "icon": "🎯"
+    },
+    "git_commit": {
+      "id": "git_commit",
+      "name": "Version Controller",
+      "description": "Commit changes with Claude",
+      "tip": "Let Claude write commit messages! It reads your changes and writes meaningful conventional commits.",
+      "category": "workflow",
+      "rarity": "uncommon",
+      "icon": "📦"
+    },
+    "git_push": {
+      "id": "git_push",
+      "name": "Ship It!",
+      "description": "Push changes to remote",
+      "tip": "Always review changes before pushing. Ask Claude to summarize what will be pushed.",
+      "category": "workflow",
+      "rarity": "uncommon",
+      "icon": "🚀"
+    },
+    "run_tests": {
+      "id": "run_tests",
+      "name": "Quality Guardian",
+      "description": "Run tests with Claude",
+      "tip": "Ask Claude: 'Run the tests and fix any failures'. This is the vibecoding verification loop!",
+      "category": "workflow",
+      "rarity": "uncommon",
+      "icon": "🧪"
+    },
+    "multi_agent": {
+      "id": "multi_agent",
+      "name": "Delegation Master",
+      "description": "Use Task tool to spawn sub-agents",
+      "tip": "Task tool creates specialized agents for complex work. Great for parallel exploration.",
+      "category": "tools",
+      "rarity": "rare",
+      "icon": "🤖"
+    },
+    "first_mcp": {
+      "id": "first_mcp",
+      "name": "MCP Pioneer",
+      "description": "Use an MCP tool",
+      "tip": "MCP extends Claude's abilities. Connect to databases, APIs, or custom tools.",
+      "category": "tools",
+      "rarity": "rare",
+      "icon": "🔌"
+    },
+    "web_searcher": {
+      "id": "web_searcher",
+      "name": "Web Explorer",
+      "description": "Search the web for information",
+      "tip": "Claude can search for latest docs, solutions, and APIs.",
+      "category": "tools",
+      "rarity": "rare",
+      "icon": "🌐"
+    },
+    "skill_invoker": {
+      "id": "skill_invoker",
+      "name": "Skill Master",
+      "description": "Use a slash command skill",
+      "tip": "Skills are shortcuts. Try /commit, /pr, /init. Create custom skills in ~/.claude/commands/",
+      "category": "tools",
+      "rarity": "rare",
+      "icon": "⚡"
+    },
+    "notebook_editor": {
+      "id": "notebook_editor",
+      "name": "Data Scientist",
+      "description": "Edit a Jupyter notebook",
+      "tip": "Claude understands notebooks! Ask for data analysis, visualizations, or ML experiments.",
+      "category": "tools",
+      "rarity": "rare",
+      "icon": "📓"
+    },
+    "config_modifier": {
+      "id": "config_modifier",
+      "name": "Customizer",
+      "description": "Modify Claude Code settings",
+      "tip": "Customize Claude with /config or edit ~/.claude/settings.json.",
+      "category": "tools",
+      "rarity": "rare",
+      "icon": "⚙️"
+    },
+    "hooks_user": {
+      "id": "hooks_user",
+      "name": "Automation Architect",
+      "description": "Set up Claude Code hooks",
+      "tip": "Hooks run scripts on events. Use them for linting, testing, or custom workflows.",
+      "category": "mastery",
+      "rarity": "epic",
+      "icon": "🪝"
+    },
+    "ralph_starter": {
+      "id": "ralph_starter",
+      "name": "Loop Master",
+      "description": "Start an autonomous coding loop",
+      "tip": "Ralph Loop lets Claude work autonomously until a goal is met. Great for complex refactoring!",
+      "category": "mastery",
+      "rarity": "legendary",
+      "icon": "🔄"
+    }
+  }
+}

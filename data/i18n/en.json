@@ -1,0 +1,94 @@
+{
+  "ui": {
+    "title": "CLAUDE CODE ACHIEVEMENTS",
+    "unlocked": "Achievement Unlocked!",
+    "locked": "Locked",
+    "progress": "Progress",
+    "rarity": "Rarity",
+    "tip": "Tip",
+    "hint": "Hint"
+  },
+  "categories": {
+    "basics": { "name": "Getting Started", "description": "First steps with Claude Code" },
+    "workflow": { "name": "Workflow", "description": "Development workflow mastery" },
+    "tools": { "name": "Power Tools", "description": "Advanced Claude Code features" },
+    "mastery": { "name": "Mastery", "description": "Expert-level usage" }
+  },
+  "achievements": {
+    "first_edit": {
+      "name": "First Touch",
+      "description": "Edit a file with Claude's help",
+      "tip": "Be specific: instead of 'fix the bug', say 'fix the TypeError in login.js line 42'"
+    },
+    "first_write": {
+      "name": "Creator",
+      "description": "Create a new file",
+      "tip": "Claude can create entire files from description. Try: 'Create a React component for a login form'"
+    },
+    "claude_md_creator": {
+      "name": "Project Curator",
+      "description": "Create CLAUDE.md for project context",
+      "tip": "CLAUDE.md helps Claude understand your project. Include: tech stack, coding style, important files, and common commands."
+    },
+    "plan_mode_user": {
+      "name": "Strategic Thinker",
+      "description": "Use Plan mode for complex tasks",
+      "tip": "Press Shift+Tab twice to enter Plan mode. Great for architecture decisions and multi-step tasks."
+    },
+    "git_commit": {
+      "name": "Version Controller",
+      "description": "Commit changes with Claude",
+      "tip": "Let Claude write commit messages! It reads your changes and writes meaningful conventional commits."
+    },
+    "git_push": {
+      "name": "Ship It!",
+      "description": "Push changes to remote",
+      "tip": "Always review changes before pushing. Ask Claude to summarize what will be pushed."
+    },
+    "run_tests": {
+      "name": "Quality Guardian",
+      "description": "Run tests with Claude",
+      "tip": "Ask Claude: 'Run the tests and fix any failures'. This is the vibecoding verification loop!"
+    },
+    "multi_agent": {
+      "name": "Delegation Master",
+      "description": "Use Task tool to spawn sub-agents",
+      "tip": "Task tool creates specialized agents for complex work. Great for parallel exploration."
+    },
+    "first_mcp": {
+      "name": "MCP Pioneer",
+      "description": "Use an MCP tool",
+      "tip": "MCP extends Claude's abilities. Connect to databases, APIs, or custom tools."
+    },
+    "web_searcher": {
+      "name": "Web Explorer",
+      "description": "Search the web for information",
+      "tip": "Claude can search for latest docs, solutions, and APIs."
+    },
+    "skill_invoker": {
+      "name": "Skill Master",
+      "description": "Use a slash command skill",
+      "tip": "Skills are shortcuts. Try /commit, /pr, /init. Create custom skills in ~/.claude/commands/"
+    },
+    "notebook_editor": {
+      "name": "Data Scientist",
+      "description": "Edit a Jupyter notebook",
+      "tip": "Claude understands notebooks! Ask for data analysis, visualizations, or ML experiments."
+    },
+    "config_modifier": {
+      "name": "Customizer",
+      "description": "Modify Claude Code settings",
+      "tip": "Customize Claude with /config or edit ~/.claude/settings.json."
+    },
+    "hooks_user": {
+      "name": "Automation Architect",
+      "description": "Set up Claude Code hooks",
+      "tip": "Hooks run scripts on events. Use them for linting, testing, or custom workflows."
+    },
+    "ralph_starter": {
+      "name": "Loop Master",
+      "description": "Start an autonomous coding loop",
+      "tip": "Ralph Loop lets Claude work autonomously until a goal is met. Great for complex refactoring!"
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "ui": {
+    "title": "CLAUDE CODE ACHIEVEMENTS",
+    "unlocked": "업적 달성!",
+    "locked": "잠김",
+    "progress": "진행 상황",
+    "rarity": "희귀도",
+    "tip": "팁",
+    "hint": "힌트"
+  },
+  "categories": {
+    "basics": { "name": "시작하기", "description": "Claude Code 첫걸음" },
+    "workflow": { "name": "워크플로우", "description": "개발 워크플로우 마스터" },
+    "tools": { "name": "파워 툴", "description": "고급 기능 활용" },
+    "mastery": { "name": "마스터리", "description": "전문가 수준" }
+  },
+  "achievements": {
+    "first_edit": {
+      "name": "첫 터치",
+      "description": "Claude와 함께 파일 편집하기",
+      "tip": "구체적으로 말하세요: '버그 고쳐줘' 대신 'login.js 42번 줄의 TypeError 수정해줘'"
+    },
+    "first_write": {
+      "name": "창조자",
+      "description": "새 파일 생성하기",
+      "tip": "Claude는 설명만으로 전체 파일을 만들 수 있어요. '로그인 폼 React 컴포넌트 만들어줘'"
+    },
+    "claude_md_creator": {
+      "name": "프로젝트 큐레이터",
+      "description": "CLAUDE.md로 프로젝트 컨텍스트 설정",
+      "tip": "CLAUDE.md는 프로젝트 이해를 돕습니다. 기술 스택, 코딩 스타일, 주요 파일, 자주 쓰는 명령어를 포함하세요."
+    },
+    "plan_mode_user": {
+      "name": "전략적 사고가",
+      "description": "복잡한 작업에 Plan 모드 사용",
+      "tip": "Shift+Tab 두 번으로 Plan 모드 진입. 아키텍처 결정이나 다단계 작업에 좋아요."
+    },
+    "git_commit": {
+      "name": "버전 관리자",
+      "description": "Claude와 함께 커밋하기",
+      "tip": "Claude가 커밋 메시지를 작성하게 하세요! conventional commits 형식으로 작성합니다."
+    },
+    "git_push": {
+      "name": "배포하기!",
+      "description": "원격 저장소에 푸시",
+      "tip": "푸시 전에 항상 변경 사항을 검토하세요. Claude에게 요약을 요청하세요."
+    },
+    "run_tests": {
+      "name": "품질 수호자",
+      "description": "Claude와 함께 테스트 실행",
+      "tip": "'테스트 실행하고 실패하면 고쳐줘'. 이게 바이브코딩 검증 루프입니다!"
+    },
+    "multi_agent": {
+      "name": "위임의 달인",
+      "description": "Task 도구로 서브 에이전트 생성",
+      "tip": "Task 도구는 복잡한 작업을 위한 전문 에이전트를 만듭니다."
+    },
+    "first_mcp": {
+      "name": "MCP 개척자",
+      "description": "MCP 도구 사용하기",
+      "tip": "MCP는 Claude 능력을 확장합니다. DB, API, 커스텀 도구에 연결하세요."
+    },
+    "web_searcher": {
+      "name": "웹 탐험가",
+      "description": "웹 검색하기",
+      "tip": "Claude가 최신 문서, 솔루션, API를 검색할 수 있어요."
+    },
+    "skill_invoker": {
+      "name": "스킬 마스터",
+      "description": "슬래시 명령 스킬 사용",
+      "tip": "/commit, /pr, /init 해보세요. ~/.claude/commands/에서 커스텀도 가능!"
+    },
+    "notebook_editor": {
+      "name": "데이터 과학자",
+      "description": "Jupyter 노트북 편집",
+      "tip": "Claude는 노트북을 이해해요! 데이터 분석, 시각화, ML 실험을 요청하세요."
+    },
+    "config_modifier": {
+      "name": "커스터마이저",
+      "description": "Claude Code 설정 수정",
+      "tip": "/config 또는 ~/.claude/settings.json을 편집하세요."
+    },
+    "hooks_user": {
+      "name": "자동화 아키텍트",
+      "description": "Claude Code 훅 설정",
+      "tip": "훅은 이벤트에 스크립트를 실행해요. 린팅, 테스트, 커스텀 워크플로우에 활용!"
+    },
+    "ralph_starter": {
+      "name": "루프 마스터",
+      "description": "자율 코딩 루프 시작",
+      "tip": "Ralph Loop는 목표 달성까지 Claude가 자율적으로 작업합니다."
+    }
+  }
+}

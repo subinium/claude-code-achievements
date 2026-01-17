@@ -1,0 +1,7 @@
+{
+  "name": "claude-code-achievements",
+  "description": "Steam-style achievement system for Claude Code",
+  "author": {
+    "name": "subinium"
+  }
+}
