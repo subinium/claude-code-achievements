@@ -4,9 +4,8 @@
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.2.x   | :white_check_mark: |
 | 1.1.x   | :white_check_mark: |
-| < 1.0   | :x:                |
+| 1.0.x   | :x:                |
 
 ## Reporting a Vulnerability
 
@@ -33,7 +32,7 @@ This plugin:
 - Does not transmit any data externally
 - Does not require elevated privileges
 - Uses shell scripts executed via Claude Code hooks
-- Modifies `~/.claude/settings.json` to register hooks (v1.2.0+)
+- Modifies `~/.claude/settings.json` to register hooks
 
 ## What the Installer Modifies
 
