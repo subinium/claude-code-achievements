@@ -1,0 +1,161 @@
+{
+  "ui": {
+    "title": "LOGROS DE CLAUDE CODE",
+    "unlocked": "¡Logro Desbloqueado!",
+    "unlocked_count": "desbloqueados",
+    "locked": "Bloqueado",
+    "progress": "Progreso",
+    "tip": "Consejo",
+    "hint": "Pista"
+  },
+  "categories": {
+    "basics": {
+      "name": "Primeros Pasos",
+      "description": "Primeros pasos con Claude Code"
+    },
+    "workflow": {
+      "name": "Flujo de Trabajo",
+      "description": "Dominio del flujo de desarrollo"
+    },
+    "tools": {
+      "name": "Herramientas Avanzadas",
+      "description": "Funciones avanzadas de Claude Code"
+    },
+    "mastery": {
+      "name": "Maestría",
+      "description": "Uso a nivel experto"
+    }
+  },
+  "achievements": {
+    "first_edit": {
+      "name": "Primer Toque",
+      "description": "Editar un archivo con la ayuda de Claude",
+      "tip": "Sé específico: en lugar de 'arregla el bug', di 'arregla el TypeError en login.js línea 42'"
+    },
+    "first_write": {
+      "name": "Creador",
+      "description": "Crear un nuevo archivo",
+      "tip": "Claude puede crear archivos completos desde una descripción. Prueba: 'Crea un componente React para un formulario de login'"
+    },
+    "claude_md_creator": {
+      "name": "Curador de Proyecto",
+      "description": "Crear CLAUDE.md para contexto del proyecto",
+      "tip": "CLAUDE.md ayuda a Claude a entender tu proyecto. Incluye: stack tecnológico, estilo de código, archivos importantes y comandos comunes."
+    },
+    "plan_mode_user": {
+      "name": "Pensador Estratégico",
+      "description": "Usar modo Plan para tareas complejas",
+      "tip": "Presiona Shift+Tab dos veces para entrar en modo Plan. Ideal para decisiones de arquitectura y tareas de múltiples pasos."
+    },
+    "git_commit": {
+      "name": "Controlador de Versiones",
+      "description": "Hacer commit de cambios con Claude",
+      "tip": "¡Deja que Claude escriba los mensajes de commit! Lee tus cambios y escribe conventional commits significativos."
+    },
+    "git_push": {
+      "name": "¡A Producción!",
+      "description": "Hacer push al repositorio remoto",
+      "tip": "Siempre revisa los cambios antes de hacer push. Pide a Claude que resuma lo que se va a subir."
+    },
+    "run_tests": {
+      "name": "Guardián de Calidad",
+      "description": "Ejecutar tests con Claude",
+      "tip": "Dile a Claude: 'Ejecuta los tests y arregla los fallos'. ¡Este es el ciclo de verificación vibecoding!"
+    },
+    "multi_agent": {
+      "name": "Maestro de Delegación",
+      "description": "Usar la herramienta Task para crear sub-agentes",
+      "tip": "La herramienta Task crea agentes especializados para trabajo complejo. Ideal para exploración en paralelo."
+    },
+    "first_mcp": {
+      "name": "Pionero MCP",
+      "description": "Usar una herramienta MCP",
+      "tip": "MCP extiende las capacidades de Claude. Conéctate a bases de datos, APIs o herramientas personalizadas."
+    },
+    "web_searcher": {
+      "name": "Explorador Web",
+      "description": "Buscar información en la web",
+      "tip": "Claude puede buscar documentación actualizada, soluciones y APIs."
+    },
+    "skill_invoker": {
+      "name": "Maestro de Habilidades",
+      "description": "Usar un comando slash skill",
+      "tip": "Los skills son atajos. Prueba /commit, /pr, /init. Crea skills personalizados en ~/.claude/commands/"
+    },
+    "config_modifier": {
+      "name": "Personalizador",
+      "description": "Modificar configuración de Claude Code",
+      "tip": "Personaliza Claude con /config o edita ~/.claude/settings.json."
+    },
+    "hooks_user": {
+      "name": "Arquitecto de Automatización",
+      "description": "Configurar hooks de Claude Code",
+      "tip": "Los hooks ejecutan scripts en eventos. Úsalos para linting, testing o flujos personalizados."
+    },
+    "ralph_starter": {
+      "name": "Maestro del Bucle",
+      "description": "Iniciar un bucle de codificación autónomo",
+      "tip": "Ralph Loop permite que Claude trabaje autónomamente hasta cumplir un objetivo. ¡Ideal para refactorizaciones complejas!"
+    },
+    "mcp_connector": {
+      "name": "Conector MCP",
+      "description": "Configurar integración de servidor MCP",
+      "tip": "Crea .mcp.json para conectar Claude a bases de datos, APIs o servicios personalizados."
+    },
+    "skill_creator": {
+      "name": "Creador de Skills",
+      "description": "Crear un skill personalizado",
+      "tip": "Los skills en .claude/skills/ proporcionan conocimiento específico del dominio. Añade frontmatter con name y description."
+    },
+    "command_crafter": {
+      "name": "Artesano de Comandos",
+      "description": "Crear un comando slash personalizado",
+      "tip": "Crea archivos .md en .claude/commands/ para añadir tus propios /comandos con flujos personalizados."
+    },
+    "agent_architect": {
+      "name": "Arquitecto de Agentes",
+      "description": "Crear un agente personalizado",
+      "tip": "Los agentes en .claude/agents/ son asistentes IA especializados para tareas específicas como revisión de código."
+    },
+    "visual_inspector": {
+      "name": "Inspector Visual",
+      "description": "Analizar una imagen o captura de pantalla",
+      "tip": "¡Claude puede leer imágenes! Úsalo para analizar capturas, diagramas o mockups de UI."
+    },
+    "global_curator": {
+      "name": "Curador Global",
+      "description": "Configurar CLAUDE.md global",
+      "tip": "~/.claude/CLAUDE.md aplica a TODOS los proyectos. Añade tu estilo de código y preferencias."
+    },
+    "cicd_pioneer": {
+      "name": "Pionero CI/CD",
+      "description": "Crear workflow de GitHub Actions",
+      "tip": "Deja que Claude configure tus pipelines CI/CD en .github/workflows/."
+    },
+    "doc_hunter": {
+      "name": "Cazador de Docs",
+      "description": "Obtener y analizar una página web",
+      "tip": "WebFetch lee cualquier URL. Ideal para consultar docs, APIs o extraer info de sitios web."
+    },
+    "task_planner": {
+      "name": "Planificador de Tareas",
+      "description": "Usar la función de lista de tareas",
+      "tip": "TodoWrite ayuda a Claude a rastrear tareas complejas de múltiples pasos. ¡Ideal para features grandes!"
+    },
+    "code_detective": {
+      "name": "Detective de Código",
+      "description": "Buscar en el código con Glob o Grep",
+      "tip": "Glob encuentra archivos por patrón, Grep busca contenido. ¡Más rápido que buscar manualmente!"
+    },
+    "security_guard": {
+      "name": "Guardia de Seguridad",
+      "description": "Configurar permisos de seguridad",
+      "tip": "Usa allowedTools/disallowedTools en la configuración para controlar el acceso de Claude."
+    },
+    "communicator": {
+      "name": "Comunicador",
+      "description": "Hacer preguntas de clarificación al usuario",
+      "tip": "¡Claude puede hacerte preguntas durante una tarea! Ideal para clarificar requisitos o elegir entre opciones."
+    }
+  }
+}

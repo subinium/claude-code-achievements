@@ -1,0 +1,161 @@
+{
+  "ui": {
+    "title": "CLAUDE CODE アチーブメント",
+    "unlocked": "アチーブメント解除！",
+    "unlocked_count": "解除",
+    "locked": "ロック中",
+    "progress": "進捗",
+    "tip": "ヒント",
+    "hint": "ヒント"
+  },
+  "categories": {
+    "basics": {
+      "name": "はじめに",
+      "description": "Claude Code の第一歩"
+    },
+    "workflow": {
+      "name": "ワークフロー",
+      "description": "開発ワークフローをマスター"
+    },
+    "tools": {
+      "name": "パワーツール",
+      "description": "高度な機能を活用"
+    },
+    "mastery": {
+      "name": "マスタリー",
+      "description": "エキスパートレベル"
+    }
+  },
+  "achievements": {
+    "first_edit": {
+      "name": "ファーストタッチ",
+      "description": "Claude と一緒にファイルを編集",
+      "tip": "具体的に：「バグを直して」ではなく「login.js の42行目の TypeError を修正して」"
+    },
+    "first_write": {
+      "name": "クリエイター",
+      "description": "新しいファイルを作成",
+      "tip": "Claude は説明だけでファイル全体を作れます。「ログインフォームの React コンポーネントを作って」"
+    },
+    "claude_md_creator": {
+      "name": "プロジェクトキュレーター",
+      "description": "CLAUDE.md でプロジェクトコンテキストを設定",
+      "tip": "CLAUDE.md はプロジェクト理解を助けます。技術スタック、コーディングスタイル、重要なファイル、よく使うコマンドを含めましょう。"
+    },
+    "plan_mode_user": {
+      "name": "戦略的思考者",
+      "description": "複雑なタスクに Plan モードを使用",
+      "tip": "Shift+Tab を2回押して Plan モードへ。アーキテクチャ決定や複数ステップのタスクに最適。"
+    },
+    "git_commit": {
+      "name": "バージョン管理者",
+      "description": "Claude と一緒にコミット",
+      "tip": "Claude にコミットメッセージを書かせよう！変更を読んで意味のある conventional commits を作成します。"
+    },
+    "git_push": {
+      "name": "シップイット！",
+      "description": "リモートにプッシュ",
+      "tip": "プッシュ前に必ず変更を確認。Claude にプッシュ内容の要約を頼みましょう。"
+    },
+    "run_tests": {
+      "name": "品質ガーディアン",
+      "description": "Claude と一緒にテストを実行",
+      "tip": "Claude に「テストを実行して失敗したら直して」と頼もう。これが vibecoding 検証ループです！"
+    },
+    "multi_agent": {
+      "name": "デリゲーションマスター",
+      "description": "Task ツールでサブエージェントを生成",
+      "tip": "Task ツールは複雑な作業用の専門エージェントを作成。並列探索に最適。"
+    },
+    "first_mcp": {
+      "name": "MCP パイオニア",
+      "description": "MCP ツールを使用",
+      "tip": "MCP は Claude の能力を拡張。データベース、API、カスタムツールに接続。"
+    },
+    "web_searcher": {
+      "name": "ウェブエクスプローラー",
+      "description": "Web で情報を検索",
+      "tip": "Claude は最新のドキュメント、ソリューション、API を検索できます。"
+    },
+    "skill_invoker": {
+      "name": "スキルマスター",
+      "description": "スラッシュコマンドスキルを使用",
+      "tip": "スキルはショートカット。/commit、/pr、/init を試そう。~/.claude/commands/ でカスタムスキルも作れます。"
+    },
+    "config_modifier": {
+      "name": "カスタマイザー",
+      "description": "Claude Code の設定を変更",
+      "tip": "/config または ~/.claude/settings.json を編集して Claude をカスタマイズ。"
+    },
+    "hooks_user": {
+      "name": "オートメーションアーキテクト",
+      "description": "Claude Code フックを設定",
+      "tip": "フックはイベント時にスクリプトを実行。リンティング、テスト、カスタムワークフローに活用。"
+    },
+    "ralph_starter": {
+      "name": "ループマスター",
+      "description": "自律コーディングループを開始",
+      "tip": "Ralph Loop は目標達成まで Claude が自律的に作業。複雑なリファクタリングに最適！"
+    },
+    "mcp_connector": {
+      "name": "MCP コネクター",
+      "description": "MCP サーバー統合を設定",
+      "tip": ".mcp.json を作成して Claude をデータベース、API、外部サービスに接続。"
+    },
+    "skill_creator": {
+      "name": "スキルクリエイター",
+      "description": "カスタムスキルを作成",
+      "tip": ".claude/skills/ のスキルはドメイン固有の知識を提供。name と description の frontmatter を追加。"
+    },
+    "command_crafter": {
+      "name": "コマンドクラフター",
+      "description": "カスタムスラッシュコマンドを作成",
+      "tip": ".claude/commands/ に .md ファイルを作成して独自の /コマンド を追加。"
+    },
+    "agent_architect": {
+      "name": "エージェントアーキテクト",
+      "description": "カスタムエージェントを作成",
+      "tip": ".claude/agents/ のエージェントはコードレビューなど特定タスク専門の AI アシスタント。"
+    },
+    "visual_inspector": {
+      "name": "ビジュアルインスペクター",
+      "description": "画像やスクリーンショットを分析",
+      "tip": "Claude は画像を読めます！スクリーンショット、図表、UI モックアップの分析に。"
+    },
+    "global_curator": {
+      "name": "グローバルキュレーター",
+      "description": "グローバル CLAUDE.md を設定",
+      "tip": "~/.claude/CLAUDE.md は全プロジェクトに適用。コーディングスタイルと好みを設定。"
+    },
+    "cicd_pioneer": {
+      "name": "CI/CD パイオニア",
+      "description": "GitHub Actions ワークフローを作成",
+      "tip": "Claude に .github/workflows/ で CI/CD パイプラインを設定させよう。"
+    },
+    "doc_hunter": {
+      "name": "ドキュメントハンター",
+      "description": "Web ページを取得して分析",
+      "tip": "WebFetch はどんな URL も読めます。ドキュメント確認、API、Web サイトからの情報抽出に便利。"
+    },
+    "task_planner": {
+      "name": "タスクプランナー",
+      "description": "TODO リスト機能を使用",
+      "tip": "TodoWrite は複雑な複数ステップタスクの追跡を支援。大規模機能開発に最適！"
+    },
+    "code_detective": {
+      "name": "コードディテクティブ",
+      "description": "Glob や Grep でコードベースを検索",
+      "tip": "Glob はパターンでファイル検索、Grep は内容検索。手動検索より高速！"
+    },
+    "security_guard": {
+      "name": "セキュリティガード",
+      "description": "セキュリティ権限を設定",
+      "tip": "設定で allowedTools/disallowedTools を使って Claude のアクセス権限を制御。"
+    },
+    "communicator": {
+      "name": "コミュニケーター",
+      "description": "ユーザーに確認の質問をする",
+      "tip": "Claude はタスク中に質問できます！要件の明確化やオプション選択に便利。"
+    }
+  }
+}

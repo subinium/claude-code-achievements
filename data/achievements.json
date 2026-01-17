@@ -1,0 +1,234 @@
+{
+  "categories": {
+    "basics": {
+      "name": "Getting Started",
+      "description": "First steps with Claude Code",
+      "order": 1
+    },
+    "workflow": {
+      "name": "Workflow",
+      "description": "Mastering development workflow",
+      "order": 2
+    },
+    "tools": {
+      "name": "Power Tools",
+      "description": "Using advanced Claude Code features",
+      "order": 3
+    },
+    "mastery": {
+      "name": "Mastery",
+      "description": "Expert-level usage",
+      "order": 4
+    }
+  },
+  "achievements": {
+    "first_edit": {
+      "id": "first_edit",
+      "name": "First Touch",
+      "description": "Edit a file with Claude's help",
+      "tip": "Be specific: instead of 'fix the bug', say 'fix the TypeError in login.js line 42'",
+      "category": "basics",
+      "icon": "✏️"
+    },
+    "first_write": {
+      "id": "first_write",
+      "name": "Creator",
+      "description": "Create a new file",
+      "tip": "Claude can create entire files from description. Try: 'Create a React component for a login form'",
+      "category": "basics",
+      "icon": "📝"
+    },
+    "claude_md_creator": {
+      "id": "claude_md_creator",
+      "name": "Project Curator",
+      "description": "Create CLAUDE.md for project context",
+      "tip": "CLAUDE.md helps Claude understand your project. Include: tech stack, coding style, important files, and common commands.",
+      "category": "basics",
+      "icon": "📋"
+    },
+    "plan_mode_user": {
+      "id": "plan_mode_user",
+      "name": "Strategic Thinker",
+      "description": "Use Plan mode for complex tasks",
+      "tip": "Press Shift+Tab twice to enter Plan mode. Great for architecture decisions and multi-step tasks.",
+      "category": "workflow",
+      "icon": "🎯"
+    },
+    "git_commit": {
+      "id": "git_commit",
+      "name": "Version Controller",
+      "description": "Commit changes with Claude",
+      "tip": "Let Claude write commit messages! It reads your changes and writes meaningful conventional commits.",
+      "category": "workflow",
+      "icon": "📦"
+    },
+    "git_push": {
+      "id": "git_push",
+      "name": "Ship It!",
+      "description": "Push changes to remote",
+      "tip": "Always review changes before pushing. Ask Claude to summarize what will be pushed.",
+      "category": "workflow",
+      "icon": "🚀"
+    },
+    "run_tests": {
+      "id": "run_tests",
+      "name": "Quality Guardian",
+      "description": "Run tests with Claude",
+      "tip": "Ask Claude: 'Run the tests and fix any failures'. This is the vibecoding verification loop!",
+      "category": "workflow",
+      "icon": "🧪"
+    },
+    "multi_agent": {
+      "id": "multi_agent",
+      "name": "Delegation Master",
+      "description": "Use Task tool to spawn sub-agents",
+      "tip": "Task tool creates specialized agents for complex work. Great for parallel exploration.",
+      "category": "tools",
+      "icon": "🤖"
+    },
+    "first_mcp": {
+      "id": "first_mcp",
+      "name": "MCP Pioneer",
+      "description": "Use an MCP tool",
+      "tip": "MCP extends Claude's abilities. Connect to databases, APIs, or custom tools.",
+      "category": "tools",
+      "icon": "🔌"
+    },
+    "web_searcher": {
+      "id": "web_searcher",
+      "name": "Web Explorer",
+      "description": "Search the web for information",
+      "tip": "Claude can search for latest docs, solutions, and APIs.",
+      "category": "tools",
+      "icon": "🌐"
+    },
+    "skill_invoker": {
+      "id": "skill_invoker",
+      "name": "Skill Master",
+      "description": "Use a slash command skill",
+      "tip": "Skills are shortcuts. Try /commit, /pr, /init. Create custom skills in ~/.claude/commands/",
+      "category": "tools",
+      "icon": "⚡"
+    },
+    "config_modifier": {
+      "id": "config_modifier",
+      "name": "Customizer",
+      "description": "Modify Claude Code settings",
+      "tip": "Customize Claude with /config or edit ~/.claude/settings.json.",
+      "category": "tools",
+      "icon": "⚙️"
+    },
+    "hooks_user": {
+      "id": "hooks_user",
+      "name": "Automation Architect",
+      "description": "Set up Claude Code hooks",
+      "tip": "Hooks run scripts on events. Use them for linting, testing, or custom workflows.",
+      "category": "mastery",
+      "icon": "🪝"
+    },
+    "ralph_starter": {
+      "id": "ralph_starter",
+      "name": "Loop Master",
+      "description": "Start an autonomous coding loop",
+      "tip": "Ralph Loop lets Claude work autonomously until a goal is met. Great for complex refactoring!",
+      "category": "mastery",
+      "icon": "🔄"
+    },
+    "mcp_connector": {
+      "id": "mcp_connector",
+      "name": "MCP Connector",
+      "description": "Configure MCP server integration",
+      "tip": "Create .mcp.json to connect Claude to external tools like databases, APIs, or custom services.",
+      "category": "mastery",
+      "icon": "🔗"
+    },
+    "skill_creator": {
+      "id": "skill_creator",
+      "name": "Skill Creator",
+      "description": "Create a custom skill",
+      "tip": "Skills in .claude/skills/ provide domain-specific knowledge. Add name and description frontmatter.",
+      "category": "tools",
+      "icon": "📜"
+    },
+    "command_crafter": {
+      "id": "command_crafter",
+      "name": "Command Crafter",
+      "description": "Create a custom slash command",
+      "tip": "Create .md files in .claude/commands/ to add your own /commands with custom workflows.",
+      "category": "tools",
+      "icon": "⌨️"
+    },
+    "agent_architect": {
+      "id": "agent_architect",
+      "name": "Agent Architect",
+      "description": "Create a custom agent",
+      "tip": "Agents in .claude/agents/ are specialized AI assistants for specific tasks like code review.",
+      "category": "mastery",
+      "icon": "🤖"
+    },
+    "visual_inspector": {
+      "id": "visual_inspector",
+      "name": "Visual Inspector",
+      "description": "Analyze an image or screenshot",
+      "tip": "Claude can read images! Use it to analyze screenshots, diagrams, or UI mockups.",
+      "category": "tools",
+      "icon": "🎨"
+    },
+    "global_curator": {
+      "id": "global_curator",
+      "name": "Global Curator",
+      "description": "Set up global CLAUDE.md",
+      "tip": "~/.claude/CLAUDE.md applies to ALL projects. Add your coding style and preferences.",
+      "category": "workflow",
+      "icon": "🌍"
+    },
+    "cicd_pioneer": {
+      "id": "cicd_pioneer",
+      "name": "CI/CD Pioneer",
+      "description": "Create GitHub Actions workflow",
+      "tip": "Let Claude set up your CI/CD pipelines in .github/workflows/.",
+      "category": "workflow",
+      "icon": "🚦"
+    },
+    "doc_hunter": {
+      "id": "doc_hunter",
+      "name": "Doc Hunter",
+      "description": "Fetch and analyze a web page",
+      "tip": "WebFetch reads any URL. Great for checking docs, APIs, or extracting info from websites.",
+      "category": "tools",
+      "icon": "📡"
+    },
+    "task_planner": {
+      "id": "task_planner",
+      "name": "Task Planner",
+      "description": "Use the todo list feature",
+      "tip": "TodoWrite helps Claude track complex multi-step tasks. Great for large features!",
+      "category": "workflow",
+      "icon": "📋"
+    },
+    "code_detective": {
+      "id": "code_detective",
+      "name": "Code Detective",
+      "description": "Search codebase with Glob or Grep",
+      "tip": "Glob finds files by pattern, Grep searches content. Faster than manual searching!",
+      "category": "basics",
+      "icon": "🔍"
+    },
+    "security_guard": {
+      "id": "security_guard",
+      "name": "Security Guard",
+      "description": "Configure security permissions",
+      "tip": "Set allowedTools/disallowedTools in settings to control what Claude can access.",
+      "category": "mastery",
+      "icon": "🛡️"
+    },
+    "communicator": {
+      "id": "communicator",
+      "name": "Communicator",
+      "description": "Ask clarifying questions to the user",
+      "tip": "Claude can ask you questions mid-task! Great for clarifying requirements or choosing between options.",
+      "category": "workflow",
+      "icon": "🗣️"
+    }
+  }
+}

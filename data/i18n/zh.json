@@ -1,0 +1,161 @@
+{
+  "ui": {
+    "title": "CLAUDE CODE 成就",
+    "unlocked": "成就解锁！",
+    "unlocked_count": "已解锁",
+    "locked": "未解锁",
+    "progress": "进度",
+    "tip": "提示",
+    "hint": "线索"
+  },
+  "categories": {
+    "basics": {
+      "name": "入门",
+      "description": "Claude Code 第一步"
+    },
+    "workflow": {
+      "name": "工作流程",
+      "description": "掌握开发工作流"
+    },
+    "tools": {
+      "name": "高级工具",
+      "description": "使用高级功能"
+    },
+    "mastery": {
+      "name": "精通",
+      "description": "专家级使用"
+    }
+  },
+  "achievements": {
+    "first_edit": {
+      "name": "初次接触",
+      "description": "使用 Claude 编辑文件",
+      "tip": "具体说明：不要说「修复bug」，而是说「修复 login.js 第42行的 TypeError」"
+    },
+    "first_write": {
+      "name": "创造者",
+      "description": "创建新文件",
+      "tip": "Claude 可以根据描述创建完整文件。试试：「创建一个登录表单的 React 组件」"
+    },
+    "claude_md_creator": {
+      "name": "项目策展人",
+      "description": "创建 CLAUDE.md 设置项目上下文",
+      "tip": "CLAUDE.md 帮助 Claude 理解你的项目。包含：技术栈、编码风格、重要文件和常用命令。"
+    },
+    "plan_mode_user": {
+      "name": "战略思考者",
+      "description": "使用 Plan 模式处理复杂任务",
+      "tip": "按两次 Shift+Tab 进入 Plan 模式。适合架构决策和多步骤任务。"
+    },
+    "git_commit": {
+      "name": "版本控制者",
+      "description": "使用 Claude 提交更改",
+      "tip": "让 Claude 写提交信息！它会阅读你的更改并写出有意义的 conventional commits。"
+    },
+    "git_push": {
+      "name": "发布！",
+      "description": "推送到远程仓库",
+      "tip": "推送前务必检查更改。让 Claude 总结将要推送的内容。"
+    },
+    "run_tests": {
+      "name": "质量守护者",
+      "description": "使用 Claude 运行测试",
+      "tip": "告诉 Claude：「运行测试并修复失败的测试」。这就是 vibecoding 验证循环！"
+    },
+    "multi_agent": {
+      "name": "委派大师",
+      "description": "使用 Task 工具创建子代理",
+      "tip": "Task 工具为复杂工作创建专门的代理。适合并行探索。"
+    },
+    "first_mcp": {
+      "name": "MCP 先驱",
+      "description": "使用 MCP 工具",
+      "tip": "MCP 扩展 Claude 的能力。连接数据库、API 或自定义工具。"
+    },
+    "web_searcher": {
+      "name": "网络探索者",
+      "description": "搜索网络信息",
+      "tip": "Claude 可以搜索最新文档、解决方案和 API。"
+    },
+    "skill_invoker": {
+      "name": "技能大师",
+      "description": "使用斜杠命令技能",
+      "tip": "技能是快捷方式。试试 /commit、/pr、/init。在 ~/.claude/commands/ 创建自定义技能。"
+    },
+    "config_modifier": {
+      "name": "定制者",
+      "description": "修改 Claude Code 设置",
+      "tip": "使用 /config 或编辑 ~/.claude/settings.json 自定义 Claude。"
+    },
+    "hooks_user": {
+      "name": "自动化架构师",
+      "description": "设置 Claude Code 钩子",
+      "tip": "钩子在事件时运行脚本。用于代码检查、测试或自定义工作流。"
+    },
+    "ralph_starter": {
+      "name": "循环大师",
+      "description": "启动自主编码循环",
+      "tip": "Ralph Loop 让 Claude 自主工作直到达成目标。适合复杂重构！"
+    },
+    "mcp_connector": {
+      "name": "MCP 连接器",
+      "description": "配置 MCP 服务器集成",
+      "tip": "创建 .mcp.json 将 Claude 连接到数据库、API 或自定义服务。"
+    },
+    "skill_creator": {
+      "name": "技能创造者",
+      "description": "创建自定义技能",
+      "tip": ".claude/skills/ 中的技能提供领域特定知识。添加 name 和 description frontmatter。"
+    },
+    "command_crafter": {
+      "name": "命令工匠",
+      "description": "创建自定义斜杠命令",
+      "tip": "在 .claude/commands/ 中创建 .md 文件来添加自己的 /命令。"
+    },
+    "agent_architect": {
+      "name": "代理架构师",
+      "description": "创建自定义代理",
+      "tip": ".claude/agents/ 中的代理是专门的 AI 助手，用于代码审查等特定任务。"
+    },
+    "visual_inspector": {
+      "name": "视觉检查员",
+      "description": "分析图片或截图",
+      "tip": "Claude 可以读取图片！用它分析截图、图表或 UI 原型。"
+    },
+    "global_curator": {
+      "name": "全局策展人",
+      "description": "设置全局 CLAUDE.md",
+      "tip": "~/.claude/CLAUDE.md 应用于所有项目。添加你的编码风格和偏好。"
+    },
+    "cicd_pioneer": {
+      "name": "CI/CD 先驱",
+      "description": "创建 GitHub Actions 工作流",
+      "tip": "让 Claude 在 .github/workflows/ 中设置 CI/CD 流水线。"
+    },
+    "doc_hunter": {
+      "name": "文档猎人",
+      "description": "获取并分析网页",
+      "tip": "WebFetch 可以读取任何 URL。适合查看文档、API 或从网站提取信息。"
+    },
+    "task_planner": {
+      "name": "任务规划者",
+      "description": "使用待办事项功能",
+      "tip": "TodoWrite 帮助 Claude 跟踪复杂的多步骤任务。适合大型功能开发！"
+    },
+    "code_detective": {
+      "name": "代码侦探",
+      "description": "使用 Glob 或 Grep 搜索代码库",
+      "tip": "Glob 按模式查找文件，Grep 搜索内容。比手动搜索快！"
+    },
+    "security_guard": {
+      "name": "安全卫士",
+      "description": "配置安全权限",
+      "tip": "在设置中使用 allowedTools/disallowedTools 控制 Claude 的访问权限。"
+    },
+    "communicator": {
+      "name": "沟通者",
+      "description": "向用户询问澄清问题",
+      "tip": "Claude 可以在任务中向你提问！适合澄清需求或在选项间做选择。"
+    }
+  }
+}
