@@ -8,6 +8,21 @@ PLUGIN_ROOT="${CLAUDE_PLUGIN_ROOT:-$(dirname "$(dirname "$0")")}"
 STATE_FILE="${HOME}/.claude/achievements/state.json"
 ACHIEVEMENTS_FILE="${PLUGIN_ROOT}/data/achievements.json"
 
+# ANSI Color Codes
+RESET='\033[0m'
+BOLD='\033[1m'
+DIM='\033[2m'
+
+C_COMMON='\033[37m'
+C_UNCOMMON='\033[32m'
+C_RARE='\033[34m'
+C_EPIC='\033[35m'
+C_LEGENDARY='\033[33m'
+
+C_HEADER='\033[36m'
+C_SUCCESS='\033[32m'
+C_BORDER='\033[90m'
+
 ACHIEVEMENT_ID="$1"
 
 if [[ -z "${ACHIEVEMENT_ID}" ]]; then
@@ -46,16 +61,28 @@ fi
 # Rarity display
 get_rarity_label() {
     case "$1" in
-        common) echo "Common" ;;
-        uncommon) echo "Uncommon" ;;
-        rare) echo "Rare" ;;
-        epic) echo "Epic" ;;
-        legendary) echo "Legendary" ;;
-        *) echo "Common" ;;
+        common) echo "COMMON" ;;
+        uncommon) echo "UNCOMMON" ;;
+        rare) echo "RARE" ;;
+        epic) echo "EPIC" ;;
+        legendary) echo "LEGENDARY" ;;
+        *) echo "COMMON" ;;
+    esac
+}
+
+get_rarity_color() {
+    case "$1" in
+        common) echo "${C_COMMON}" ;;
+        uncommon) echo "${C_UNCOMMON}" ;;
+        rare) echo "${C_RARE}" ;;
+        epic) echo "${C_EPIC}" ;;
+        legendary) echo "${C_LEGENDARY}" ;;
+        *) echo "${C_COMMON}" ;;
     esac
 }
 
 RARITY_LABEL=$(get_rarity_label "${RARITY}")
+RARITY_COLOR=$(get_rarity_color "${RARITY}")
 
 # Show system notification (cross-platform)
 # Check if system notifications are available
@@ -119,11 +146,12 @@ show_system_notification() {
 show_terminal_notification() {
     {
         echo ""
-        echo "🎮 Achievement Unlocked!"
-        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-        echo "   ${ICON} ${NAME}"
-        echo "   ${RARITY_LABEL} • ${UNLOCKED}/${TOTAL} unlocked"
-        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        printf "${C_BORDER}╭────────────────────────────────────╮${RESET}\n"
+        printf "${C_BORDER}│${RESET}  ${C_SUCCESS}★${RESET} ${C_HEADER}${BOLD}ACHIEVEMENT UNLOCKED${RESET}           ${C_BORDER}│${RESET}\n"
+        printf "${C_BORDER}├────────────────────────────────────┤${RESET}\n"
+        printf "${C_BORDER}│${RESET}  ${ICON} ${BOLD}${NAME}${RESET}\n"
+        printf "${C_BORDER}│${RESET}  ${RARITY_COLOR}${RARITY_LABEL}${RESET} ${DIM}•${RESET} ${BOLD}${UNLOCKED}${RESET}${DIM}/${TOTAL} unlocked${RESET}\n"
+        printf "${C_BORDER}╰────────────────────────────────────╯${RESET}\n"
         echo ""
     } >&2
 }

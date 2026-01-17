@@ -7,6 +7,26 @@ PLUGIN_ROOT="${CLAUDE_PLUGIN_ROOT:-$(dirname "$(dirname "$0")")}"
 STATE_FILE="${HOME}/.claude/achievements/state.json"
 ACHIEVEMENTS_FILE="${PLUGIN_ROOT}/data/achievements.json"
 
+# ANSI Color Codes
+RESET='\033[0m'
+BOLD='\033[1m'
+DIM='\033[2m'
+
+# Rarity colors
+C_COMMON='\033[37m'        # White/Gray
+C_UNCOMMON='\033[32m'      # Green
+C_RARE='\033[34m'          # Blue
+C_EPIC='\033[35m'          # Magenta/Purple
+C_LEGENDARY='\033[33m'     # Yellow/Gold
+
+# UI colors
+C_HEADER='\033[36m'        # Cyan
+C_SUCCESS='\033[32m'       # Green
+C_LOCKED='\033[90m'        # Dark gray
+C_BORDER='\033[90m'        # Dark gray
+C_PROGRESS='\033[36m'      # Cyan
+C_PROGRESS_BG='\033[90m'   # Dark gray
+
 # Initialize state if needed
 if [[ ! -f "${STATE_FILE}" ]]; then
     mkdir -p "$(dirname "${STATE_FILE}")"
@@ -49,15 +69,26 @@ get_achievement_desc() {
     get_localized ".achievements[\"${id}\"].description" "$(jq -r ".achievements[\"${id}\"].description" "${ACHIEVEMENTS_FILE}")"
 }
 
-# Get rarity emoji
-get_rarity_emoji() {
+# Get rarity color and label
+get_rarity_color() {
     case "$1" in
-        common) echo "⬜" ;;
-        uncommon) echo "🟩" ;;
-        rare) echo "🟦" ;;
-        epic) echo "🟪" ;;
-        legendary) echo "🟨" ;;
-        *) echo "⬜" ;;
+        common) echo "${C_COMMON}" ;;
+        uncommon) echo "${C_UNCOMMON}" ;;
+        rare) echo "${C_RARE}" ;;
+        epic) echo "${C_EPIC}" ;;
+        legendary) echo "${C_LEGENDARY}" ;;
+        *) echo "${C_COMMON}" ;;
+    esac
+}
+
+get_rarity_label() {
+    case "$1" in
+        common) echo "COMMON" ;;
+        uncommon) echo "UNCOMMON" ;;
+        rare) echo "RARE" ;;
+        epic) echo "EPIC" ;;
+        legendary) echo "LEGENDARY" ;;
+        *) echo "COMMON" ;;
     esac
 }
 
@@ -69,18 +100,19 @@ print_header() {
     [[ ${total} -gt 0 ]] && percent=$((unlocked * 100 / total))
 
     echo ""
-    echo "🎮 CLAUDE CODE ACHIEVEMENTS"
-    echo "┌────────────────────────────────────────────────────────┐"
-    echo "│"
+    printf "${C_HEADER}${BOLD}  CLAUDE CODE ACHIEVEMENTS${RESET}\n"
+    printf "${C_BORDER}╭──────────────────────────────────────────────────────────╮${RESET}\n"
+    printf "${C_BORDER}│${RESET}"
 
-    # Progress bar
+    # Progress bar with color
     local filled=$((percent / 5))
     local empty=$((20 - filled))
-    printf "│   "
-    for ((i=0; i<filled; i++)); do printf "█"; done
-    for ((i=0; i<empty; i++)); do printf "░"; done
-    printf "  %d/%d unlocked (%d%%)\n" "${unlocked}" "${total}" "${percent}"
-    echo "│"
+    printf "   ${C_PROGRESS}"
+    for ((i=0; i<filled; i++)); do printf "▰"; done
+    printf "${C_PROGRESS_BG}"
+    for ((i=0; i<empty; i++)); do printf "▱"; done
+    printf "${RESET}  ${BOLD}%d${RESET}/${DIM}%d${RESET} unlocked ${C_HEADER}%d%%${RESET}          ${C_BORDER}│${RESET}\n" "${unlocked}" "${total}" "${percent}"
+    printf "${C_BORDER}│${RESET}\n"
 }
 
 # Show achievements for a category
@@ -89,8 +121,8 @@ show_category() {
     local category_name=$(jq -r ".categories[\"${category}\"].name // \"${category}\"" "${ACHIEVEMENTS_FILE}")
     local localized_name=$(get_localized ".categories[\"${category}\"].name" "${category_name}")
 
-    echo "├── ${localized_name} ─────────────────────────────────────"
-    echo "│"
+    printf "${C_BORDER}├─${RESET} ${BOLD}${localized_name}${RESET} ${C_BORDER}────────────────────────────────────────────${RESET}\n"
+    printf "${C_BORDER}│${RESET}\n"
 
     # Get achievements in this category
     local ids=$(jq -r ".achievements | to_entries | map(select(.value.category == \"${category}\")) | .[].key" "${ACHIEVEMENTS_FILE}")
@@ -98,7 +130,8 @@ show_category() {
     for id in ${ids}; do
         local icon=$(jq -r ".achievements[\"${id}\"].icon // \"🏆\"" "${ACHIEVEMENTS_FILE}")
         local rarity=$(jq -r ".achievements[\"${id}\"].rarity // \"common\"" "${ACHIEVEMENTS_FILE}")
-        local rarity_emoji=$(get_rarity_emoji "${rarity}")
+        local rarity_color=$(get_rarity_color "${rarity}")
+        local rarity_label=$(get_rarity_label "${rarity}")
         local name=$(get_achievement_name "${id}")
         local desc=$(get_achievement_desc "${id}")
 
@@ -108,20 +141,20 @@ show_category() {
         fi
 
         if [[ "${unlocked}" == "true" ]]; then
-            echo "│   ✅ ${icon} ${name} ${rarity_emoji}"
+            printf "${C_BORDER}│${RESET}   ${C_SUCCESS}✓${RESET} ${icon} ${BOLD}${name}${RESET}  ${rarity_color}${rarity_label}${RESET}\n"
         else
-            echo "│   ⬛ ${icon} ${name} ${rarity_emoji}"
-            echo "│        ↳ ${desc}"
+            printf "${C_BORDER}│${RESET}   ${C_LOCKED}○ ${icon} ${name}  ${rarity_label}${RESET}\n"
+            printf "${C_BORDER}│${RESET}     ${DIM}└─ ${desc}${RESET}\n"
         fi
     done
-    echo "│"
+    printf "${C_BORDER}│${RESET}\n"
 }
 
 # Show rarity legend
 show_legend() {
-    echo "├────────────────────────────────────────────────────────┤"
-    echo "│  ⬜ Common  🟩 Uncommon  🟦 Rare  🟪 Epic  🟨 Legendary"
-    echo "└────────────────────────────────────────────────────────┘"
+    printf "${C_BORDER}├──────────────────────────────────────────────────────────┤${RESET}\n"
+    printf "${C_BORDER}│${RESET}  ${C_COMMON}■ COMMON${RESET}  ${C_UNCOMMON}■ UNCOMMON${RESET}  ${C_RARE}■ RARE${RESET}  ${C_EPIC}■ EPIC${RESET}  ${C_LEGENDARY}■ LEGENDARY${RESET}  ${C_BORDER}│${RESET}\n"
+    printf "${C_BORDER}╰──────────────────────────────────────────────────────────╯${RESET}\n"
     echo ""
 }
 
