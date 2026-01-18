@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.4] - 2026-01-19
+
+### Fixed
+- Installer UI: Remove confusing arrow marker, clearer number selection
+
 ## [1.2.3] - 2026-01-19
 
 ### Changed

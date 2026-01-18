@@ -77,13 +77,13 @@ async function selectOption(title, options, defaultIndex = 0) {
   console.log(`\n${BOLD}${title}${RESET}\n`);
 
   options.forEach((opt, i) => {
-    const marker = i === defaultIndex ? `${CYAN}▶${RESET}` : ' ';
-    const highlight = i === defaultIndex ? CYAN : DIM;
-    console.log(`  ${marker} ${highlight}${i + 1}. ${opt.label}${RESET}`);
+    const isDefault = i === defaultIndex;
+    const defaultMark = isDefault ? ` ${DIM}(default)${RESET}` : '';
+    console.log(`  ${CYAN}${i + 1}.${RESET} ${opt.label}${defaultMark}`);
   });
 
   return new Promise((resolve) => {
-    rl.question(`\n${DIM}Enter number [1-${options.length}]:${RESET} `, (answer) => {
+    rl.question(`\n  Enter number [1-${options.length}]: `, (answer) => {
       rl.close();
       const num = parseInt(answer) || (defaultIndex + 1);
       const idx = Math.max(0, Math.min(options.length - 1, num - 1));
