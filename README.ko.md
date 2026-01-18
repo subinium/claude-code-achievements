@@ -1,18 +1,24 @@
 <div align="center">
 
-<img src="assets/icon.png" alt="Claude Code Achievements" width="120" height="120">
+<img src="assets/icon.png" alt="Claude Code Achievements" width="128" height="128">
 
 # Claude Code Achievements
 
-**Claude Code를 위한 스팀 스타일 업적 시스템**
+### AI 코딩 스킬을 레벨업하세요
 
-[![npm version](https://img.shields.io/npm/v/claude-code-achievements.svg?style=flat-square&color=CB3837)](https://www.npmjs.com/package/claude-code-achievements)
-[![license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
-[![node](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen.svg?style=flat-square)](package.json)
+[![npm version](https://img.shields.io/npm/v/claude-code-achievements.svg?style=for-the-badge&color=FFD700)](https://www.npmjs.com/package/claude-code-achievements)
+[![downloads](https://img.shields.io/npm/dt/claude-code-achievements.svg?style=for-the-badge&color=4CAF50)](https://www.npmjs.com/package/claude-code-achievements)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
-코딩 여정을 게임화하고 Claude Code 기능을 마스터하며 업적을 달성하세요!
+```
+╔══════════════════════════════════════════════════════════════╗
+║  🎮  업적 달성  •  진행 추적  •  코딩을 게임처럼  🎮           ║
+╚══════════════════════════════════════════════════════════════╝
+```
 
-[설치](#설치) · [사용법](#사용법) · [업적](#업적) · [작동 원리](#아키텍처)
+**Claude Code를 RPG 어드벤처로 바꿔보세요!**
+
+[빠른 시작](#-빠른-시작) · [업적](#-업적) · [명령어](#-명령어)
 
 **[English](README.md)** · **[中文](README.zh.md)** · **[Español](README.es.md)** · **[日本語](README.ja.md)**
 
@@ -20,296 +26,240 @@
 
 ---
 
-## 기능
+## ✨ 왜 만들었나요?
 
-- **26개 업적** - 4개 카테고리
-- **실시간 알림** - 시스템 알림 또는 터미널
-- **다국어 지원** (EN / 中文 / ES / 한국어 / 日本語)
-- **크로스 플랫폼** - macOS / Linux / Windows
-- **글로벌 설치** - 모든 프로젝트에서 자동 작동
+Claude Code를 배우는 건 하나의 여정입니다. 이 플러그인은 그 여정을 **게임**으로 만들어줍니다.
 
-## 설치
+- 🏆 **26개 업적** - 4개의 스킬 트리
+- 🔔 **실시간 알림** - 레벨업할 때마다
+- 📊 **마스터리 추적** - 초보자에서 전문가까지
+- 🌍 **5개 언어** 지원
+
+---
+
+## 🚀 빠른 시작
 
 ```bash
 npx claude-code-achievements
 ```
 
-대화형 설치가 진행됩니다:
-1. OS 및 알림 기능 자동 감지
-2. 언어 선택 (English/한국어)
-3. 알림 스타일 설정 (system/terminal/both)
-4. `~/.claude/plugins/local/`에 글로벌 설치
+끝! 코딩을 시작하면 업적이 알아서 달성됩니다!
 
-> **참고:** 이 플러그인은 **글로벌**로 설치되어 모든 프로젝트에서 자동으로 작동합니다.
+---
 
-### 수동 설치
+## 🏆 업적
+
+<table>
+<tr>
+<td width="25%" align="center">
+
+### 🌱 시작하기
+**4개 업적**
+
+*첫 발걸음*
+
+</td>
+<td width="25%" align="center">
+
+### ⚡ 워크플로우
+**8개 업적**
+
+*스마트하게 일하기*
+
+</td>
+<td width="25%" align="center">
+
+### 🔧 파워 툴
+**9개 업적**
+
+*능력 해금*
+
+</td>
+<td width="25%" align="center">
+
+### 👑 마스터리
+**5개 업적**
+
+*전설이 되다*
+
+</td>
+</tr>
+</table>
+
+---
+
+### 🌱 시작하기
+
+> *모든 마스터도 처음엔 초보자였다*
+
+| | 업적 | 퀘스트 |
+|:--:|------|--------|
+| ✏️ | **첫 터치** | Claude로 파일 편집하기 |
+| 📝 | **창조자** | 새 파일 만들기 |
+| 🔍 | **코드 탐정** | Glob 또는 Grep으로 검색 |
+| 📋 | **프로젝트 큐레이터** | 첫 `CLAUDE.md` 만들기 |
+
+---
+
+### ⚡ 워크플로우
+
+> *효율성은 지적인 게으름이다*
+
+| | 업적 | 퀘스트 |
+|:--:|------|--------|
+| 📋 | **태스크 플래너** | TodoWrite로 할일 관리 |
+| 🎯 | **전략적 사고가** | Plan 모드 진입 (`Shift+Tab` × 2) |
+| 🗣️ | **소통의 달인** | Claude가 명확화 질문하기 |
+| 🌍 | **글로벌 큐레이터** | `~/.claude/CLAUDE.md` 설정 |
+| 📦 | **버전 관리자** | Claude와 함께 커밋 |
+| 🚀 | **배포하기!** | 리모트에 푸시 |
+| 🧪 | **품질 수호자** | 테스트 실행 |
+| 🚦 | **CI/CD 개척자** | GitHub Actions 생성 |
+
+---
+
+### 🔧 파워 툴
+
+> *큰 힘에는 큰 생산성이 따른다*
+
+| | 업적 | 퀘스트 |
+|:--:|------|--------|
+| 🎨 | **비주얼 인스펙터** | 이미지/스크린샷 분석 |
+| 📡 | **문서 사냥꾼** | 웹 페이지 가져와서 분석 |
+| 🤖 | **위임의 달인** | Task로 서브 에이전트 생성 |
+| 🔌 | **MCP 개척자** | MCP 도구 사용 |
+| 🌐 | **웹 탐험가** | 웹 검색 |
+| ⚙️ | **커스터마이저** | Claude Code 설정 수정 |
+| 📜 | **스킬 창조자** | 커스텀 스킬 생성 |
+| ⌨️ | **명령어 장인** | 커스텀 슬래시 명령 생성 |
+| 🧩 | **플러그인 탐험가** | 마켓플레이스에서 플러그인 설치 |
+
+---
+
+### 👑 마스터리
+
+> *한계를 넘어서는 소수의 엘리트*
+
+| | 업적 | 퀘스트 |
+|:--:|------|--------|
+| 🪝 | **자동화 아키텍트** | Claude Code 훅 설정 |
+| 🔗 | **MCP 커넥터** | `.mcp.json` 통합 설정 |
+| 🤖 | **에이전트 설계자** | 커스텀 에이전트 생성 |
+| 🛡️ | **보안 수호자** | 보안 권한 설정 |
+| 🔄 | **루프 마스터** | 자율 코딩 루프 시작 |
+
+---
+
+## 🎮 명령어
 
 ```bash
-git clone https://github.com/subinium/claude-code-achievements.git
-cd claude-code-achievements
-node bin/install.js
+/achievements          # 달성한 업적 보기
+/achievements locked   # 미달성 업적 + 힌트 보기
+/achievements all      # 전체 업적 카테고리별 보기
+/achievements-settings # 언어 및 알림 설정
 ```
-
-## 사용법
-
-| 명령어 | 설명 |
-|--------|------|
-| `/achievements` | 달성한 업적 보기 (기본) |
-| `/achievements locked` | 미달성 업적 + 힌트 보기 |
-| `/achievements all` | 전체 업적 카테고리별 보기 |
-| `/achievements-settings` | 언어 및 알림 설정 변경 |
 
 ### 카테고리 필터
 
 ```bash
-/achievements basics    # 시작하기
-/achievements workflow  # 워크플로우
-/achievements tools     # 파워 툴
-/achievements mastery   # 마스터리
-```
-
-## 업적
-
-<details>
-<summary><b>시작하기</b> (4개)</summary>
-
-| 업적 | 달성 조건 |
-|------|----------|
-| ✏️ **첫 터치** | 파일 편집하기 |
-| 📝 **창조자** | 새 파일 생성하기 |
-| 🔍 **코드 탐정** | Glob 또는 Grep으로 검색 |
-| 📋 **프로젝트 큐레이터** | `CLAUDE.md` 생성하기 |
-
-</details>
-
-<details>
-<summary><b>워크플로우</b> (8개)</summary>
-
-| 업적 | 달성 조건 |
-|------|----------|
-| 📋 **태스크 플래너** | TodoWrite로 할일 추적 |
-| 🎯 **전략적 사고가** | Plan 모드 사용 (`Shift+Tab` 두 번) |
-| 🗣️ **소통의 달인** | Claude가 `AskUserQuestion`으로 요구사항 명확화 또는 옵션 제시 |
-| 🌍 **글로벌 큐레이터** | `~/.claude/CLAUDE.md` 설정 |
-| 📦 **버전 관리자** | Claude와 함께 커밋 |
-| 🚀 **배포하기!** | 원격 저장소에 푸시 |
-| 🧪 **품질 수호자** | 테스트 실행 |
-| 🚦 **CI/CD 개척자** | GitHub Actions 워크플로우 생성 |
-
-</details>
-
-<details>
-<summary><b>파워 툴</b> (9개)</summary>
-
-| 업적 | 달성 조건 |
-|------|----------|
-| 🎨 **비주얼 인스펙터** | 이미지나 스크린샷 분석 |
-| 📡 **문서 사냥꾼** | 웹 페이지 가져와서 분석 |
-| 🤖 **위임의 달인** | `Task` 도구로 서브 에이전트 생성 |
-| 🔌 **MCP 개척자** | MCP 도구 사용 |
-| 🌐 **웹 탐험가** | `WebSearch` 사용 |
-| ⚙️ **커스터마이저** | Claude Code 설정 수정 |
-| 📜 **스킬 창조자** | `.claude/skills/`에 커스텀 스킬 생성 |
-| ⌨️ **명령어 장인** | 커스텀 슬래시 명령 생성 |
-| 🧩 **플러그인 탐험가** | 마켓플레이스에서 플러그인 설치 |
-
-</details>
-
-<details>
-<summary><b>마스터리</b> (5개)</summary>
-
-| 업적 | 달성 조건 |
-|------|----------|
-| 🪝 **자동화 아키텍트** | Claude Code 훅 설정 |
-| 🔗 **MCP 커넥터** | `.mcp.json` 설정 |
-| 🤖 **에이전트 설계자** | `.claude/agents/`에 커스텀 에이전트 생성 |
-| 🛡️ **보안 수호자** | 보안 권한 설정 |
-| 🔄 **루프 마스터** | 자율 코딩 루프 시작 |
-
-</details>
-
----
-
-## 아키텍처
-
-이 플러그인은 **Claude Code의 훅 시스템**을 사용하여 실시간으로 작업을 추적합니다.
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                     CLAUDE CODE 세션                         │
-├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│   사용자: "설정 파일 수정해줘"                                │
-│                     │                                        │
-│                     ▼                                        │
-│   ┌─────────────────────────────────────┐                   │
-│   │         Claude가 Edit 도구 사용       │                   │
-│   └─────────────────────────────────────┘                   │
-│                     │                                        │
-│                     ▼                                        │
-│   ┌─────────────────────────────────────┐                   │
-│   │    PostToolUse 훅 트리거             │◄── hooks.json    │
-│   │    → track-achievement.sh            │                   │
-│   └─────────────────────────────────────┘                   │
-│                     │                                        │
-│         ┌──────────┴──────────┐                             │
-│         ▼                     ▼                             │
-│   ┌───────────┐        ┌───────────┐                        │
-│   │  매칭!    │        │ 매칭 없음  │                        │
-│   │           │        │           │                        │
-│   │ 업적 달성  │        │ 계속 진행  │                        │
-│   │ 알림 표시  │        └───────────┘                        │
-│   │ 상태 저장  │                                              │
-│   └───────────┘                                              │
-│                                                              │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### 플러그인 구조
-
-```
-~/.claude/plugins/local/claude-code-achievements/
-├── .claude-plugin/
-│   └── plugin.json          # 플러그인 메타데이터
-├── hooks/
-│   ├── hooks.json           # 훅 정의 (PostToolUse, Stop)
-│   ├── track-achievement.sh # 메인 추적 로직
-│   └── track-stop.sh        # 세션 종료 핸들러
-├── commands/
-│   ├── achievements.md      # /achievements 명령
-│   └── achievements-settings.md
-├── scripts/
-│   ├── show-achievements.sh # 화면 표시 UI
-│   └── show-notification.sh # 알림 핸들러
-└── data/
-    ├── achievements.json    # 업적 정의
-    └── i18n/
-        ├── en.json          # English
-        ├── zh.json          # 中文
-        ├── es.json          # Español
-        ├── ko.json          # 한국어
-        └── ja.json          # 日本語
-```
-
-### 훅 작동 방식
-
-플러그인은 Claude Code에 두 개의 훅을 등록합니다:
-
-| 훅 | 트리거 | 목적 |
-|----|--------|------|
-| `PostToolUse` | 도구 실행 후 | 업적 달성 조건 확인 |
-| `Stop` | 세션 종료 시 | 세션 통계 저장 |
-
-### 명령 작동 방식
-
-슬래시 명령(`/achievements`)은 `~/.claude/commands/`에 있는 **마크다운 파일**로 구현됩니다.
-
----
-
-## 알림
-
-시스템 알림은 설치 시 자동 감지됩니다:
-
-| OS | 방식 | 사운드 |
-|----|------|--------|
-| macOS | `osascript` | Glass |
-| Linux | `notify-send` | 시스템 기본 |
-| Windows | PowerShell | 시스템 기본 |
-| 폴백 | 터미널 | 없음 |
-
-### Linux에서 notify-send 설치
-
-```bash
-# Ubuntu/Debian
-sudo apt install libnotify-bin
-
-# Fedora
-sudo dnf install libnotify
-
-# Arch
-sudo pacman -S libnotify
+/achievements basics    # 🌱 시작하기
+/achievements workflow  # ⚡ 워크플로우
+/achievements tools     # 🔧 파워 툴
+/achievements mastery   # 👑 마스터리
 ```
 
 ---
 
-## 설정
+## 🔔 알림
 
-설정은 `~/.claude/achievements/state.json`에 저장됩니다:
+업적 달성 시 바로 알려드립니다!
 
-```json
-{
-  "settings": {
-    "language": "ko",
-    "notifications": true,
-    "notification_style": "system"
-  },
-  "achievements": {},
-  "counters": {}
-}
-```
-
-| 설정 | 값 | 설명 |
-|------|-----|------|
-| `language` | `"en"`, `"zh"`, `"es"`, `"ko"`, `"ja"` | UI 언어 |
-| `notifications` | `true`, `false` | 알림 활성화/비활성화 |
-| `notification_style` | `"system"`, `"terminal"`, `"both"` | 알림 방식 |
+| 플랫폼 | 스타일 |
+|--------|--------|
+| 🍎 macOS | 네이티브 알림 + 사운드 |
+| 🐧 Linux | 시스템 알림 |
+| 🪟 Windows | 토스트 알림 |
+| 💻 폴백 | 터미널 알림 |
 
 ---
 
-## 문제 해결
+## 🛠️ 작동 원리
 
-<details>
-<summary><b>업적이 달성되지 않나요?</b></summary>
-
-```bash
-# 플러그인 설치 확인
-ls ~/.claude/plugins/local/claude-code-achievements/
-
-# 상태 파일 확인
-cat ~/.claude/achievements/state.json
-
-# 훅이 로드되었는지 확인 (설치 후 Claude Code 재시작)
+```
+   You: "설정 파일 수정해줘"
+              │
+              ▼
+   ┌─────────────────────┐
+   │  Claude가 Edit 사용  │
+   └─────────────────────┘
+              │
+              ▼
+   ┌─────────────────────┐
+   │  🎯 훅 트리거       │──▶ 업적 체크
+   └─────────────────────┘
+              │
+       ┌──────┴──────┐
+       ▼             ▼
+   ┌───────┐    ┌────────┐
+   │ 🏆 +1 │    │  None  │
+   │ 달성! │    │  계속  │
+   └───────┘    └────────┘
 ```
 
-</details>
+플러그인은 Claude Code의 이벤트 시스템에 연결됩니다. 모든 도구 사용이 추적되고, 마일스톤에 도달하면 보상을 받습니다!
 
-<details>
-<summary><b>진행 상황 초기화</b></summary>
+---
 
+## 🌍 지원 언어
+
+- 🇺🇸 English
+- 🇨🇳 中文
+- 🇪🇸 Español
+- 🇰🇷 한국어
+- 🇯🇵 日本語
+
+`/achievements-settings`로 언제든 변경 가능
+
+---
+
+## 📂 진행 상황
+
+모든 진행 상황은 로컬에 저장됩니다:
+
+```
+~/.claude/achievements/state.json
+```
+
+여정을 다시 시작하려면:
 ```bash
 rm ~/.claude/achievements/state.json
 ```
 
-</details>
-
-<details>
-<summary><b>플러그인 재설치</b></summary>
-
-```bash
-npx claude-code-achievements@latest
-```
-
-</details>
-
 ---
 
-## 기여하기
+## 🤝 기여하기
 
-기여를 환영합니다! 아이디어:
+새로운 업적 아이디어가 있나요? 버그를 발견했나요? 기여를 환영합니다!
 
-- 새로운 업적
-- 새로운 언어 번역
-- UI 개선
-- 버그 수정
-
-## 라이선스
-
-MIT © [subinium](https://github.com/subinium)
+- 🏆 새 업적 제안
+- 🌍 번역 추가
+- 🐛 이슈 리포트
+- ⭐ 스타 눌러주기!
 
 ---
 
 <div align="center">
 
-**Happy coding!**
+### 여정을 시작할 준비가 되셨나요?
+
+```bash
+npx claude-code-achievements
+```
+
+**레벨업하고, 업적을 달성하고, 즐겁게 코딩하세요!**
+
+---
+
+MIT © [subinium](https://github.com/subinium)
 
 </div>

@@ -15,7 +15,7 @@ const ITEMS_TO_COPY = ['.claude-plugin', 'commands', 'hooks', 'scripts', 'data',
 const GREEN = '\x1b[32m';
 const CYAN = '\x1b[36m';
 const YELLOW = '\x1b[33m';
-const RED = '\x1b[31m';
+const MAGENTA = '\x1b[35m';
 const DIM = '\x1b[2m';
 const BOLD = '\x1b[1m';
 const RESET = '\x1b[0m';
@@ -54,14 +54,11 @@ function detectLanguage() {
 function checkSystemNotification(osName) {
   try {
     if (osName === 'macOS') {
-      // macOS always has osascript
       return { available: true, method: 'osascript' };
     } else if (osName === 'Linux') {
-      // Check for notify-send
       execSync('which notify-send', { stdio: 'ignore' });
       return { available: true, method: 'notify-send' };
     } else if (osName === 'Windows') {
-      // Check for PowerShell
       execSync('where powershell.exe', { stdio: 'ignore' });
       return { available: true, method: 'PowerShell' };
     }
@@ -71,44 +68,54 @@ function checkSystemNotification(osName) {
   return { available: false, method: null };
 }
 
-
-async function prompt(question, options) {
+async function selectOption(title, options, defaultIndex = 0) {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   });
 
+  console.log(`\n${BOLD}${title}${RESET}\n`);
+
+  options.forEach((opt, i) => {
+    const marker = i === defaultIndex ? `${CYAN}▶${RESET}` : ' ';
+    const highlight = i === defaultIndex ? CYAN : DIM;
+    console.log(`  ${marker} ${highlight}${i + 1}. ${opt.label}${RESET}`);
+  });
+
   return new Promise((resolve) => {
-    const optStr = options.map((o, i) => `${i + 1}) ${o.label}`).join('  ');
-    rl.question(`${question} [${optStr}]: `, (answer) => {
+    rl.question(`\n${DIM}Enter number [1-${options.length}]:${RESET} `, (answer) => {
       rl.close();
-      const num = parseInt(answer) || 1;
+      const num = parseInt(answer) || (defaultIndex + 1);
       const idx = Math.max(0, Math.min(options.length - 1, num - 1));
-      resolve(options[idx].value);
+      resolve({ value: options[idx].value, label: options[idx].label });
     });
   });
 }
 
 async function install() {
   console.log('');
-  console.log(`${CYAN}${BOLD}╔═══════════════════════════════════════════════════════════╗${RESET}`);
-  console.log(`${CYAN}${BOLD}║       🎮 Claude Code Achievements Installer 🎮            ║${RESET}`);
-  console.log(`${CYAN}${BOLD}╚═══════════════════════════════════════════════════════════╝${RESET}`);
+  console.log(`${CYAN}╔════════════════════════════════════════════════════════════════╗${RESET}`);
+  console.log(`${CYAN}║                                                                ║${RESET}`);
+  console.log(`${CYAN}║${RESET}   ${BOLD}🎮 Claude Code Achievements${RESET}                                 ${CYAN}║${RESET}`);
+  console.log(`${CYAN}║${RESET}   ${DIM}Level up your AI coding skills${RESET}                             ${CYAN}║${RESET}`);
+  console.log(`${CYAN}║                                                                ║${RESET}`);
+  console.log(`${CYAN}╚════════════════════════════════════════════════════════════════╝${RESET}`);
   console.log('');
 
   const detectedOS = detectOS();
   const detectedLang = detectLanguage();
   const notifyCheck = checkSystemNotification(detectedOS);
 
-  console.log(`${DIM}Detected OS: ${detectedOS}${RESET}`);
+  // System info box
+  console.log(`${DIM}┌─ System Info ─────────────────────────────────────────────────┐${RESET}`);
+  console.log(`${DIM}│${RESET}  Platform:      ${BOLD}${detectedOS}${RESET}`);
   if (notifyCheck.available) {
-    console.log(`${DIM}System notifications: ${GREEN}✓${RESET}${DIM} ${notifyCheck.method}${RESET}`);
+    console.log(`${DIM}│${RESET}  Notifications: ${GREEN}✓ Available${RESET} ${DIM}(${notifyCheck.method})${RESET}`);
   } else {
-    console.log(`${DIM}System notifications: ${YELLOW}✗${RESET}${DIM} not available (will use terminal)${RESET}`);
+    console.log(`${DIM}│${RESET}  Notifications: ${YELLOW}○ Terminal only${RESET}`);
   }
-  console.log('');
+  console.log(`${DIM}└───────────────────────────────────────────────────────────────┘${RESET}`);
 
-  // Check if interactive
   const isInteractive = process.stdin.isTTY;
 
   let language = detectedLang;
@@ -116,43 +123,49 @@ async function install() {
 
   if (isInteractive) {
     // Language selection
-    console.log(`${BOLD}Select language / 选择语言 / Idioma / 언어 / 言語:${RESET}`);
-    language = await prompt('', [
-      { label: 'English', value: 'en' },
-      { label: '中文', value: 'zh' },
-      { label: 'Español', value: 'es' },
-      { label: '한국어', value: 'ko' },
-      { label: '日本語', value: 'ja' }
-    ]);
-    const langNames = { en: 'English', zh: '中文', es: 'Español', ko: '한국어', ja: '日本語' };
-    console.log(`  ${GREEN}✓${RESET} ${langNames[language]}`);
-    console.log('');
+    const langResult = await selectOption(
+      '🌍 Choose your language',
+      [
+        { label: '🇺🇸 English', value: 'en' },
+        { label: '🇨🇳 中文', value: 'zh' },
+        { label: '🇪🇸 Español', value: 'es' },
+        { label: '🇰🇷 한국어', value: 'ko' },
+        { label: '🇯🇵 日本語', value: 'ja' }
+      ],
+      ['en', 'zh', 'es', 'ko', 'ja'].indexOf(detectedLang)
+    );
+    language = langResult.value;
+    console.log(`${GREEN}  ✓ Selected: ${langResult.label}${RESET}`);
 
-    // Notification style (only ask if system notifications available)
+    // Notification style
     if (notifyCheck.available) {
-      console.log(`${BOLD}Notification style:${RESET}`);
-      notificationStyle = await prompt('', [
-        { label: `System (${notifyCheck.method})`, value: 'system' },
-        { label: 'Terminal', value: 'terminal' },
-        { label: 'Both', value: 'both' }
-      ]);
-      console.log(`  ${GREEN}✓${RESET} ${notificationStyle}`);
+      const notifyResult = await selectOption(
+        '🔔 Achievement notifications',
+        [
+          { label: `System popup (${notifyCheck.method})`, value: 'system' },
+          { label: 'Terminal message', value: 'terminal' },
+          { label: 'Both', value: 'both' }
+        ],
+        0
+      );
+      notificationStyle = notifyResult.value;
+      console.log(`${GREEN}  ✓ Selected: ${notifyResult.label}${RESET}`);
     } else {
-      console.log(`${BOLD}Notification:${RESET} Terminal (system not available)`);
-      notificationStyle = 'terminal';
+      console.log(`\n${DIM}🔔 Notifications: Terminal mode (system not available)${RESET}`);
     }
-    console.log('');
   }
+
+  console.log('');
+  console.log(`${DIM}───────────────────────────────────────────────────────────────${RESET}`);
+  console.log(`${YELLOW}  ⏳ Installing plugin...${RESET}`);
 
   // Copy files
   const packageRoot = path.resolve(__dirname, '..');
 
   if (fs.existsSync(TARGET_DIR)) {
-    console.log(`${DIM}Removing existing installation...${RESET}`);
     fs.rmSync(TARGET_DIR, { recursive: true, force: true });
   }
 
-  console.log(`${DIM}Installing to ${TARGET_DIR}${RESET}`);
   fs.mkdirSync(TARGET_DIR, { recursive: true });
 
   for (const item of ITEMS_TO_COPY) {
@@ -171,7 +184,6 @@ async function install() {
     fs.mkdirSync(stateDir, { recursive: true });
   }
 
-  // Always update settings, preserve achievements if exists
   let existingState = null;
   if (fs.existsSync(stateFile)) {
     try {
@@ -192,8 +204,7 @@ async function install() {
 
   fs.writeFileSync(stateFile, JSON.stringify(newState, null, 2));
 
-  // Symlink commands to ~/.claude/commands/ for short command names (/achievements)
-  // Plugin also provides namespaced commands (/claude-code-achievements:achievements)
+  // Symlink commands
   const commandsDir = path.join(os.homedir(), '.claude', 'commands');
   if (!fs.existsSync(commandsDir)) {
     fs.mkdirSync(commandsDir, { recursive: true });
@@ -204,17 +215,14 @@ async function install() {
       const linkPath = path.join(commandsDir, file);
       const targetPath = path.join(pluginCommands, file);
 
-      // Remove existing file/symlink if exists
       if (fs.existsSync(linkPath)) {
         fs.unlinkSync(linkPath);
       }
-
-      // Create symlink
       fs.symlinkSync(targetPath, linkPath);
     }
   }
 
-  // Register hooks in ~/.claude/settings.json
+  // Register hooks
   const settingsFile = path.join(os.homedir(), '.claude', 'settings.json');
   let settings = {};
   if (fs.existsSync(settingsFile)) {
@@ -223,11 +231,9 @@ async function install() {
     } catch (e) {}
   }
 
-  // Add plugin to enabledPlugins
   if (!settings.enabledPlugins) settings.enabledPlugins = {};
   settings.enabledPlugins['claude-code-achievements@local'] = true;
 
-  // Add hooks (replace any existing achievement hooks)
   if (!settings.hooks) settings.hooks = {};
 
   const trackScript = path.join(TARGET_DIR, 'hooks', 'track-achievement.sh');
@@ -249,19 +255,31 @@ async function install() {
 
   fs.writeFileSync(settingsFile, JSON.stringify(settings, null, 2));
 
+  // Count achievements if any exist
+  const achievementCount = Object.keys(existingState?.achievements || {}).length;
+
+  console.log(`${DIM}───────────────────────────────────────────────────────────────${RESET}`);
   console.log('');
-  console.log(`${GREEN}${BOLD}✅ Installation complete!${RESET}`);
+  console.log(`${GREEN}${BOLD}  ✅ Installation complete!${RESET}`);
   console.log('');
-  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+
+  if (achievementCount > 0) {
+    console.log(`${MAGENTA}  🏆 Welcome back! You have ${achievementCount} achievement${achievementCount > 1 ? 's' : ''} unlocked.${RESET}`);
+    console.log('');
+  }
+
+  console.log(`${CYAN}╭──────────────────────────────────────────────────────────────╮${RESET}`);
+  console.log(`${CYAN}│${RESET}  ${BOLD}Quick Start${RESET}                                                 ${CYAN}│${RESET}`);
+  console.log(`${CYAN}│${RESET}                                                              ${CYAN}│${RESET}`);
+  console.log(`${CYAN}│${RESET}  ${YELLOW}/achievements${RESET}          View your achievements             ${CYAN}│${RESET}`);
+  console.log(`${CYAN}│${RESET}  ${YELLOW}/achievements locked${RESET}   See what's left to unlock          ${CYAN}│${RESET}`);
+  console.log(`${CYAN}│${RESET}  ${YELLOW}/achievements-settings${RESET} Change language & notifications    ${CYAN}│${RESET}`);
+  console.log(`${CYAN}│${RESET}                                                              ${CYAN}│${RESET}`);
+  console.log(`${CYAN}╰──────────────────────────────────────────────────────────────╯${RESET}`);
   console.log('');
-  console.log(`${BOLD}Ready to use:${RESET}`);
+  console.log(`${DIM}  26 achievements await. Start coding to unlock them!${RESET}`);
   console.log('');
-  console.log(`  ${CYAN}/achievements${RESET}       View your achievements`);
-  console.log(`  ${CYAN}/achievements hint${RESET}  Get tips for unlocking`);
-  console.log('');
-  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-  console.log('');
-  console.log('🎮 Happy coding!');
+  console.log(`  ${BOLD}🎮 Happy coding!${RESET}`);
   console.log('');
 }
 

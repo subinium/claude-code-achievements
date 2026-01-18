@@ -1,18 +1,24 @@
 <div align="center">
 
-<img src="assets/icon.png" alt="Claude Code Achievements" width="120" height="120">
+<img src="assets/icon.png" alt="Claude Code Achievements" width="128" height="128">
 
 # Claude Code Achievements
 
-**Steam-style achievement system for Claude Code**
+### Level up your AI coding skills
 
-[![npm version](https://img.shields.io/npm/v/claude-code-achievements.svg?style=flat-square&color=CB3837)](https://www.npmjs.com/package/claude-code-achievements)
-[![license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
-[![node](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen.svg?style=flat-square)](package.json)
+[![npm version](https://img.shields.io/npm/v/claude-code-achievements.svg?style=for-the-badge&color=FFD700)](https://www.npmjs.com/package/claude-code-achievements)
+[![downloads](https://img.shields.io/npm/dt/claude-code-achievements.svg?style=for-the-badge&color=4CAF50)](https://www.npmjs.com/package/claude-code-achievements)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
-Gamify your coding journey and unlock achievements as you master Claude Code features!
+```
+╔══════════════════════════════════════════════════════════════╗
+║  🎮  UNLOCK ACHIEVEMENTS  •  TRACK PROGRESS  •  HAVE FUN  🎮  ║
+╚══════════════════════════════════════════════════════════════╝
+```
 
-[Installation](#installation) · [Usage](#usage) · [Achievements](#achievements) · [How It Works](#architecture)
+**Transform your Claude Code experience into an RPG adventure!**
+
+[Quick Start](#-quick-start) · [Achievements](#-achievements) · [Commands](#-commands)
 
 **[中文](README.zh.md)** · **[Español](README.es.md)** · **[한국어](README.ko.md)** · **[日本語](README.ja.md)**
 
@@ -20,296 +26,240 @@ Gamify your coding journey and unlock achievements as you master Claude Code fea
 
 ---
 
-## Features
+## ✨ Why This Exists
 
-- **26 Achievements** across 4 categories
-- **Real-time notifications** via system alerts or terminal
-- **Multi-language support** (EN / 中文 / ES / 한국어 / 日本語)
-- **Cross-platform** (macOS / Linux / Windows)
-- **Global installation** - works across all your projects
+Learning Claude Code is a journey. This plugin turns that journey into a **game**.
 
-## Installation
+- 🏆 **26 Achievements** to unlock across 4 skill trees
+- 🔔 **Real-time notifications** when you level up
+- 📊 **Track your mastery** from beginner to expert
+- 🌍 **5 Languages** supported
+
+---
+
+## 🚀 Quick Start
 
 ```bash
 npx claude-code-achievements
 ```
 
-The interactive installer will:
-1. Auto-detect your OS and notification capability
-2. Ask for language preference (English/한국어)
-3. Configure notification style (system/terminal/both)
-4. Install globally to `~/.claude/plugins/local/`
+That's it. Start coding and watch the achievements roll in!
 
-> **Note:** This plugin installs **globally** and works across all your projects automatically.
+---
 
-### Manual Installation
+## 🏆 Achievements
+
+<table>
+<tr>
+<td width="25%" align="center">
+
+### 🌱 Getting Started
+**4 Achievements**
+
+*Your first steps*
+
+</td>
+<td width="25%" align="center">
+
+### ⚡ Workflow
+**8 Achievements**
+
+*Work smarter*
+
+</td>
+<td width="25%" align="center">
+
+### 🔧 Power Tools
+**9 Achievements**
+
+*Unlock abilities*
+
+</td>
+<td width="25%" align="center">
+
+### 👑 Mastery
+**5 Achievements**
+
+*Become a legend*
+
+</td>
+</tr>
+</table>
+
+---
+
+### 🌱 Getting Started
+
+> *Every master was once a beginner*
+
+| | Achievement | Quest |
+|:--:|-------------|-------|
+| ✏️ | **First Touch** | Edit any file with Claude |
+| 📝 | **Creator** | Create a new file |
+| 🔍 | **Code Detective** | Search codebase with Glob or Grep |
+| 📋 | **Project Curator** | Create your first `CLAUDE.md` |
+
+---
+
+### ⚡ Workflow
+
+> *Efficiency is intelligent laziness*
+
+| | Achievement | Quest |
+|:--:|-------------|-------|
+| 📋 | **Task Planner** | Use TodoWrite for task tracking |
+| 🎯 | **Strategic Thinker** | Enter Plan mode (`Shift+Tab` × 2) |
+| 🗣️ | **Communicator** | Have Claude ask you a clarifying question |
+| 🌍 | **Global Curator** | Set up global `~/.claude/CLAUDE.md` |
+| 📦 | **Version Controller** | Make a commit with Claude |
+| 🚀 | **Ship It!** | Push code to remote |
+| 🧪 | **Quality Guardian** | Run tests |
+| 🚦 | **CI/CD Pioneer** | Create GitHub Actions workflow |
+
+---
+
+### 🔧 Power Tools
+
+> *With great power comes great productivity*
+
+| | Achievement | Quest |
+|:--:|-------------|-------|
+| 🎨 | **Visual Inspector** | Analyze an image or screenshot |
+| 📡 | **Doc Hunter** | Fetch and analyze a web page |
+| 🤖 | **Delegation Master** | Spawn a sub-agent with Task tool |
+| 🔌 | **MCP Pioneer** | Use any MCP tool |
+| 🌐 | **Web Explorer** | Search the web |
+| ⚙️ | **Customizer** | Modify Claude Code settings |
+| 📜 | **Skill Creator** | Create custom skill |
+| ⌨️ | **Command Crafter** | Create custom slash command |
+| 🧩 | **Plugin Explorer** | Install a marketplace plugin |
+
+---
+
+### 👑 Mastery
+
+> *The elite few who push the boundaries*
+
+| | Achievement | Quest |
+|:--:|-------------|-------|
+| 🪝 | **Automation Architect** | Set up Claude Code hooks |
+| 🔗 | **MCP Connector** | Configure `.mcp.json` integration |
+| 🤖 | **Agent Architect** | Create a custom agent |
+| 🛡️ | **Security Guard** | Configure security permissions |
+| 🔄 | **Loop Master** | Start autonomous coding loop |
+
+---
+
+## 🎮 Commands
 
 ```bash
-git clone https://github.com/subinium/claude-code-achievements.git
-cd claude-code-achievements
-node bin/install.js
+/achievements          # View your unlocked achievements
+/achievements locked   # See what's left to unlock (with hints!)
+/achievements all      # Full achievement list by category
+/achievements-settings # Configure language & notifications
 ```
-
-## Usage
-
-| Command | Description |
-|---------|-------------|
-| `/achievements` | View unlocked achievements (default) |
-| `/achievements locked` | View locked achievements with hints |
-| `/achievements all` | View all achievements by category |
-| `/achievements-settings` | Change language or notification settings |
 
 ### Category Filters
 
 ```bash
-/achievements basics    # Getting Started
-/achievements workflow  # Workflow
-/achievements tools     # Power Tools
-/achievements mastery   # Mastery
-```
-
-## Achievements
-
-<details>
-<summary><b>Getting Started</b> (4 achievements)</summary>
-
-| Achievement | How to Unlock |
-|-------------|---------------|
-| ✏️ **First Touch** | Edit any file |
-| 📝 **Creator** | Create a new file |
-| 🔍 **Code Detective** | Use Glob or Grep to search codebase |
-| 📋 **Project Curator** | Create `CLAUDE.md` for project context |
-
-</details>
-
-<details>
-<summary><b>Workflow</b> (8 achievements)</summary>
-
-| Achievement | How to Unlock |
-|-------------|---------------|
-| 📋 **Task Planner** | Use TodoWrite for task tracking |
-| 🎯 **Strategic Thinker** | Use Plan mode (`Shift+Tab` twice) |
-| 🗣️ **Communicator** | Claude uses `AskUserQuestion` to clarify requirements or present options |
-| 🌍 **Global Curator** | Set up `~/.claude/CLAUDE.md` |
-| 📦 **Version Controller** | Commit with Claude |
-| 🚀 **Ship It!** | Push to remote repository |
-| 🧪 **Quality Guardian** | Run tests with Claude |
-| 🚦 **CI/CD Pioneer** | Create GitHub Actions workflow |
-
-</details>
-
-<details>
-<summary><b>Power Tools</b> (9 achievements)</summary>
-
-| Achievement | How to Unlock |
-|-------------|---------------|
-| 🎨 **Visual Inspector** | Analyze image or screenshot |
-| 📡 **Doc Hunter** | Fetch and analyze a web page |
-| 🤖 **Delegation Master** | Use `Task` tool for sub-agents |
-| 🔌 **MCP Pioneer** | Use any MCP tool |
-| 🌐 **Web Explorer** | Use `WebSearch` tool |
-| ⚙️ **Customizer** | Modify Claude Code settings |
-| 📜 **Skill Creator** | Create custom skill in `.claude/skills/` |
-| ⌨️ **Command Crafter** | Create custom slash command |
-| 🧩 **Plugin Explorer** | Install a plugin from marketplace |
-
-</details>
-
-<details>
-<summary><b>Mastery</b> (5 achievements)</summary>
-
-| Achievement | How to Unlock |
-|-------------|---------------|
-| 🪝 **Automation Architect** | Set up Claude Code hooks |
-| 🔗 **MCP Connector** | Configure `.mcp.json` for integrations |
-| 🤖 **Agent Architect** | Create custom agent in `.claude/agents/` |
-| 🛡️ **Security Guard** | Configure security permissions |
-| 🔄 **Loop Master** | Start autonomous coding loop |
-
-</details>
-
----
-
-## Architecture
-
-This plugin uses **Claude Code's hook system** to track your actions in real-time.
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                     CLAUDE CODE SESSION                      │
-├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│   You: "Edit the config file"                               │
-│                     │                                        │
-│                     ▼                                        │
-│   ┌─────────────────────────────────────┐                   │
-│   │         Claude uses Edit tool        │                   │
-│   └─────────────────────────────────────┘                   │
-│                     │                                        │
-│                     ▼                                        │
-│   ┌─────────────────────────────────────┐                   │
-│   │    PostToolUse Hook Triggered        │◄── hooks.json    │
-│   │    → track-achievement.sh            │                   │
-│   └─────────────────────────────────────┘                   │
-│                     │                                        │
-│         ┌──────────┴──────────┐                             │
-│         ▼                     ▼                             │
-│   ┌───────────┐        ┌───────────┐                        │
-│   │  Match!   │        │ No Match  │                        │
-│   │           │        │           │                        │
-│   │ Unlock    │        │ Continue  │                        │
-│   │ Notify    │        └───────────┘                        │
-│   │ Save      │                                              │
-│   └───────────┘                                              │
-│                                                              │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### Plugin Structure
-
-```
-~/.claude/plugins/local/claude-code-achievements/
-├── .claude-plugin/
-│   └── plugin.json          # Plugin metadata
-├── hooks/
-│   ├── hooks.json           # Hook definitions (PostToolUse, Stop)
-│   ├── track-achievement.sh # Main tracking logic
-│   └── track-stop.sh        # Session end handler
-├── commands/
-│   ├── achievements.md      # /achievements command
-│   └── achievements-settings.md
-├── scripts/
-│   ├── show-achievements.sh # Display UI
-│   └── show-notification.sh # Notification handler
-└── data/
-    ├── achievements.json    # Achievement definitions
-    └── i18n/
-        ├── en.json          # English
-        ├── zh.json          # 中文
-        ├── es.json          # Español
-        ├── ko.json          # 한국어
-        └── ja.json          # 日本語
-```
-
-### How Hooks Work
-
-The plugin registers two hooks in Claude Code:
-
-| Hook | Trigger | Purpose |
-|------|---------|---------|
-| `PostToolUse` | After any tool execution | Check if action unlocks achievement |
-| `Stop` | Session ends | Save session stats |
-
-### How Commands Work
-
-Slash commands (`/achievements`) are implemented as **markdown files** in `~/.claude/commands/`. Claude Code reads these and executes the embedded instructions.
-
----
-
-## Notifications
-
-System notifications are auto-detected during installation:
-
-| OS | Method | Sound |
-|----|--------|-------|
-| macOS | `osascript` | Glass |
-| Linux | `notify-send` | System default |
-| Windows | PowerShell | System default |
-| Fallback | Terminal | None |
-
-### Install notify-send on Linux
-
-```bash
-# Ubuntu/Debian
-sudo apt install libnotify-bin
-
-# Fedora
-sudo dnf install libnotify
-
-# Arch
-sudo pacman -S libnotify
+/achievements basics    # 🌱 Getting Started
+/achievements workflow  # ⚡ Workflow
+/achievements tools     # 🔧 Power Tools
+/achievements mastery   # 👑 Mastery
 ```
 
 ---
 
-## Configuration
+## 🔔 Notifications
 
-Settings are stored in `~/.claude/achievements/state.json`:
+Achievement unlocked? You'll know instantly!
 
-```json
-{
-  "settings": {
-    "language": "en",
-    "notifications": true,
-    "notification_style": "system"
-  },
-  "achievements": {},
-  "counters": {}
-}
-```
-
-| Setting | Values | Description |
-|---------|--------|-------------|
-| `language` | `"en"`, `"zh"`, `"es"`, `"ko"`, `"ja"` | UI language |
-| `notifications` | `true`, `false` | Enable/disable alerts |
-| `notification_style` | `"system"`, `"terminal"`, `"both"` | Alert method |
+| Platform | Style |
+|----------|-------|
+| 🍎 macOS | Native notification with sound |
+| 🐧 Linux | System notification |
+| 🪟 Windows | Toast notification |
+| 💻 Fallback | Terminal alert |
 
 ---
 
-## Troubleshooting
+## 🛠️ How It Works
 
-<details>
-<summary><b>Achievements not unlocking?</b></summary>
-
-```bash
-# Check plugin is installed
-ls ~/.claude/plugins/local/claude-code-achievements/
-
-# Check state file exists
-cat ~/.claude/achievements/state.json
-
-# Verify hooks are loaded (restart Claude Code after install)
+```
+   You: "Edit the config file"
+              │
+              ▼
+   ┌─────────────────────┐
+   │  Claude uses Edit   │
+   └─────────────────────┘
+              │
+              ▼
+   ┌─────────────────────┐
+   │  🎯 Hook triggered  │──▶ Achievement check
+   └─────────────────────┘
+              │
+       ┌──────┴──────┐
+       ▼             ▼
+   ┌───────┐    ┌────────┐
+   │ 🏆 +1 │    │  None  │
+   │Unlock!│    │Continue│
+   └───────┘    └────────┘
 ```
 
-</details>
+The plugin hooks into Claude Code's event system. Every tool use is tracked. When you hit a milestone, you get rewarded!
 
-<details>
-<summary><b>Reset all progress</b></summary>
+---
 
+## 🌍 Languages
+
+- 🇺🇸 English
+- 🇨🇳 中文
+- 🇪🇸 Español
+- 🇰🇷 한국어
+- 🇯🇵 日本語
+
+Change anytime with `/achievements-settings`
+
+---
+
+## 📂 Your Progress
+
+All progress is saved locally:
+
+```
+~/.claude/achievements/state.json
+```
+
+Reset your journey anytime:
 ```bash
 rm ~/.claude/achievements/state.json
 ```
 
-</details>
-
-<details>
-<summary><b>Reinstall plugin</b></summary>
-
-```bash
-npx claude-code-achievements@latest
-```
-
-</details>
-
 ---
 
-## Contributing
+## 🤝 Contributing
 
-Contributions welcome! Ideas:
+Got an idea for a new achievement? Found a bug? Contributions welcome!
 
-- New achievements
-- New language translations
-- UI improvements
-- Bug fixes
-
-## License
-
-MIT © [subinium](https://github.com/subinium)
+- 🏆 Suggest new achievements
+- 🌍 Add translations
+- 🐛 Report issues
+- ⭐ Star this repo!
 
 ---
 
 <div align="center">
 
-**Happy coding!**
+### Ready to start your journey?
+
+```bash
+npx claude-code-achievements
+```
+
+**Level up. Unlock achievements. Have fun coding!**
+
+---
+
+MIT © [subinium](https://github.com/subinium)
 
 </div>

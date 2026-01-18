@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.3] - 2026-01-19
+
+### Changed
+- Complete README redesign with gamification theme (all 5 languages)
+- Installer UI overhaul with beautiful ANSI styling and better UX
+
+### Fixed
+- POSIX compatibility for lowercase conversion in track-achievement.sh (fixes macOS Bash 3.2)
+
 ## [1.2.2] - 2026-01-17
 
 ### Removed

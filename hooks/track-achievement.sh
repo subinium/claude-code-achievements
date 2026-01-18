@@ -169,7 +169,8 @@ check_achievements() {
             # visual_inspector (image files) - case insensitive
             FILE_PATH=$(echo "$TOOL_INPUT" | jq -r '.file_path // empty')
             FILE_NAME=$(basename "${FILE_PATH}")
-            FILE_PATH_LOWER="${FILE_PATH,,}"
+            # Use tr for POSIX compatibility (bash 4.0+ ${,,} not available everywhere)
+            FILE_PATH_LOWER=$(echo "${FILE_PATH}" | tr '[:upper:]' '[:lower:]')
             if [[ "${FILE_PATH_LOWER}" =~ \.(png|jpg|jpeg|gif|webp|svg|bmp|ico)$ ]]; then
                 if ! is_unlocked "visual_inspector"; then
                     unlock_achievement "visual_inspector" "Analyzed image: ${FILE_NAME}"

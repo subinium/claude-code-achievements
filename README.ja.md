@@ -1,18 +1,24 @@
 <div align="center">
 
-<img src="assets/icon.png" alt="Claude Code Achievements" width="120" height="120">
+<img src="assets/icon.png" alt="Claude Code Achievements" width="128" height="128">
 
 # Claude Code Achievements
 
-**Steam スタイルの Claude Code アチーブメントシステム**
+### AI コーディングスキルをレベルアップ
 
-[![npm version](https://img.shields.io/npm/v/claude-code-achievements.svg?style=flat-square&color=CB3837)](https://www.npmjs.com/package/claude-code-achievements)
-[![license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
-[![node](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen.svg?style=flat-square)](package.json)
+[![npm version](https://img.shields.io/npm/v/claude-code-achievements.svg?style=for-the-badge&color=FFD700)](https://www.npmjs.com/package/claude-code-achievements)
+[![downloads](https://img.shields.io/npm/dt/claude-code-achievements.svg?style=for-the-badge&color=4CAF50)](https://www.npmjs.com/package/claude-code-achievements)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
-コーディングの旅をゲーム化し、Claude Code の機能をマスターしながらアチーブメントを解除しよう！
+```
+╔══════════════════════════════════════════════════════════════╗
+║  🎮  実績解除  •  進捗追跡  •  楽しくコーディング  🎮         ║
+╚══════════════════════════════════════════════════════════════╝
+```
 
-[インストール](#インストール) · [使い方](#使い方) · [アチーブメント](#アチーブメント) · [仕組み](#アーキテクチャ)
+**Claude Code 体験を RPG アドベンチャーに変えよう！**
+
+[クイックスタート](#-クイックスタート) · [実績](#-実績) · [コマンド](#-コマンド)
 
 **[English](README.md)** · **[中文](README.zh.md)** · **[Español](README.es.md)** · **[한국어](README.ko.md)**
 
@@ -20,296 +26,240 @@
 
 ---
 
-## 機能
+## ✨ なぜ作ったのか？
 
-- **26 のアチーブメント**、4 つのカテゴリに分類
-- **リアルタイム通知**、システムアラートまたはターミナル経由
-- **多言語サポート**（EN / 中文 / ES / 한국어 / 日本語）
-- **クロスプラットフォーム**（macOS / Linux / Windows）
-- **グローバルインストール** - すべてのプロジェクトで自動的に動作
+Claude Code を学ぶことは一つの旅です。このプラグインはその旅を**ゲーム**に変えます。
 
-## インストール
+- 🏆 **26 の実績** - 4 つのスキルツリー
+- 🔔 **リアルタイム通知** - レベルアップ時に
+- 📊 **マスタリー追跡** - 初心者からエキスパートまで
+- 🌍 **5 言語** サポート
+
+---
+
+## 🚀 クイックスタート
 
 ```bash
 npx claude-code-achievements
 ```
 
-インタラクティブインストーラーが：
-1. OS と通知機能を自動検出
-2. 言語設定を確認
-3. 通知スタイルを設定（システム/ターミナル/両方）
-4. `~/.claude/plugins/local/` にグローバルインストール
+以上！コーディングを始めれば実績が自動で解除されます！
 
-> **注意：** このプラグインは**グローバルインストール**され、すべてのプロジェクトで自動的に動作します。
+---
 
-### 手動インストール
+## 🏆 実績
+
+<table>
+<tr>
+<td width="25%" align="center">
+
+### 🌱 はじめに
+**4 つの実績**
+
+*最初の一歩*
+
+</td>
+<td width="25%" align="center">
+
+### ⚡ ワークフロー
+**8 つの実績**
+
+*スマートに働く*
+
+</td>
+<td width="25%" align="center">
+
+### 🔧 パワーツール
+**9 つの実績**
+
+*能力を解放*
+
+</td>
+<td width="25%" align="center">
+
+### 👑 マスタリー
+**5 つの実績**
+
+*伝説になる*
+
+</td>
+</tr>
+</table>
+
+---
+
+### 🌱 はじめに
+
+> *すべてのマスターもかつては初心者だった*
+
+| | 実績 | クエスト |
+|:--:|------|----------|
+| ✏️ | **ファーストタッチ** | Claude でファイルを編集 |
+| 📝 | **クリエイター** | 新しいファイルを作成 |
+| 🔍 | **コード探偵** | Glob または Grep で検索 |
+| 📋 | **プロジェクトキュレーター** | 最初の `CLAUDE.md` を作成 |
+
+---
+
+### ⚡ ワークフロー
+
+> *効率は知的な怠惰である*
+
+| | 実績 | クエスト |
+|:--:|------|----------|
+| 📋 | **タスクプランナー** | TodoWrite でタスク管理 |
+| 🎯 | **戦略的思考者** | プランモードに入る (`Shift+Tab` × 2) |
+| 🗣️ | **コミュニケーター** | Claude に明確化質問をさせる |
+| 🌍 | **グローバルキュレーター** | `~/.claude/CLAUDE.md` を設定 |
+| 📦 | **バージョン管理者** | Claude とコミット |
+| 🚀 | **シップイット！** | リモートにプッシュ |
+| 🧪 | **品質の守護者** | テストを実行 |
+| 🚦 | **CI/CD パイオニア** | GitHub Actions を作成 |
+
+---
+
+### 🔧 パワーツール
+
+> *大きな力には大きな生産性が伴う*
+
+| | 実績 | クエスト |
+|:--:|------|----------|
+| 🎨 | **ビジュアルインスペクター** | 画像/スクリーンショットを分析 |
+| 📡 | **ドキュメントハンター** | Web ページを取得して分析 |
+| 🤖 | **デリゲーションマスター** | Task でサブエージェントを生成 |
+| 🔌 | **MCP パイオニア** | MCP ツールを使用 |
+| 🌐 | **ウェブエクスプローラー** | Web 検索 |
+| ⚙️ | **カスタマイザー** | Claude Code 設定を変更 |
+| 📜 | **スキルクリエイター** | カスタムスキルを作成 |
+| ⌨️ | **コマンドクラフター** | カスタムスラッシュコマンドを作成 |
+| 🧩 | **プラグインエクスプローラー** | マーケットプレイスからプラグインをインストール |
+
+---
+
+### 👑 マスタリー
+
+> *限界を超える少数のエリート*
+
+| | 実績 | クエスト |
+|:--:|------|----------|
+| 🪝 | **オートメーションアーキテクト** | Claude Code フックを設定 |
+| 🔗 | **MCP コネクター** | `.mcp.json` 統合を設定 |
+| 🤖 | **エージェントアーキテクト** | カスタムエージェントを作成 |
+| 🛡️ | **セキュリティガード** | セキュリティ権限を設定 |
+| 🔄 | **ループマスター** | 自律コーディングループを開始 |
+
+---
+
+## 🎮 コマンド
 
 ```bash
-git clone https://github.com/subinium/claude-code-achievements.git
-cd claude-code-achievements
-node bin/install.js
+/achievements          # 解除した実績を表示
+/achievements locked   # 未解除の実績 + ヒントを表示
+/achievements all      # カテゴリ別に全実績を表示
+/achievements-settings # 言語と通知を設定
 ```
-
-## 使い方
-
-| コマンド | 説明 |
-|----------|------|
-| `/achievements` | 解除済みアチーブメントを表示（デフォルト） |
-| `/achievements locked` | 未解除アチーブメントとヒントを表示 |
-| `/achievements all` | カテゴリ別に全アチーブメントを表示 |
-| `/achievements-settings` | 言語や通知設定を変更 |
 
 ### カテゴリフィルター
 
 ```bash
-/achievements basics    # はじめに
-/achievements workflow  # ワークフロー
-/achievements tools     # パワーツール
-/achievements mastery   # マスタリー
-```
-
-## アチーブメント
-
-<details>
-<summary><b>はじめに</b>（4 アチーブメント）</summary>
-
-| アチーブメント | 解除方法 |
-|----------------|----------|
-| ✏️ **ファーストタッチ** | 任意のファイルを編集 |
-| 📝 **クリエイター** | 新しいファイルを作成 |
-| 🔍 **コードディテクティブ** | Glob または Grep でコードベースを検索 |
-| 📋 **プロジェクトキュレーター** | `CLAUDE.md` を作成してプロジェクトコンテキストを設定 |
-
-</details>
-
-<details>
-<summary><b>ワークフロー</b>（8 アチーブメント）</summary>
-
-| アチーブメント | 解除方法 |
-|----------------|----------|
-| 📋 **タスクプランナー** | TodoWrite でタスク管理 |
-| 🎯 **戦略的思考者** | Plan モードを使用（`Shift+Tab` を 2 回） |
-| 🗣️ **コミュニケーター** | Claude が `AskUserQuestion` で要件を確認 |
-| 🌍 **グローバルキュレーター** | `~/.claude/CLAUDE.md` を設定 |
-| 📦 **バージョン管理者** | Claude と一緒にコミット |
-| 🚀 **シップイット！** | リモートリポジトリにプッシュ |
-| 🧪 **品質ガーディアン** | Claude と一緒にテストを実行 |
-| 🚦 **CI/CD パイオニア** | GitHub Actions ワークフローを作成 |
-
-</details>
-
-<details>
-<summary><b>パワーツール</b>（9 アチーブメント）</summary>
-
-| アチーブメント | 解除方法 |
-|----------------|----------|
-| 🎨 **ビジュアルインスペクター** | 画像やスクリーンショットを分析 |
-| 📡 **ドキュメントハンター** | Web ページを取得して分析 |
-| 🤖 **デリゲーションマスター** | `Task` ツールでサブエージェントを使用 |
-| 🔌 **MCP パイオニア** | 任意の MCP ツールを使用 |
-| 🌐 **ウェブエクスプローラー** | `WebSearch` ツールを使用 |
-| ⚙️ **カスタマイザー** | Claude Code の設定を変更 |
-| 📜 **スキルクリエイター** | `.claude/skills/` にカスタムスキルを作成 |
-| ⌨️ **コマンドクラフター** | カスタムスラッシュコマンドを作成 |
-| 🧩 **プラグイン探検家** | マーケットプレイスからプラグインをインストール |
-
-</details>
-
-<details>
-<summary><b>マスタリー</b>（5 アチーブメント）</summary>
-
-| アチーブメント | 解除方法 |
-|----------------|----------|
-| 🪝 **オートメーションアーキテクト** | Claude Code フックを設定 |
-| 🔗 **MCP コネクター** | `.mcp.json` で統合を設定 |
-| 🤖 **エージェントアーキテクト** | `.claude/agents/` にカスタムエージェントを作成 |
-| 🛡️ **セキュリティガード** | セキュリティ権限を設定 |
-| 🔄 **ループマスター** | 自律コーディングループを開始 |
-
-</details>
-
----
-
-## アーキテクチャ
-
-このプラグインは **Claude Code のフックシステム** を使用してアクションをリアルタイムで追跡します。
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                   CLAUDE CODE セッション                     │
-├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│   あなた: 「設定ファイルを編集して」                          │
-│                     │                                        │
-│                     ▼                                        │
-│   ┌─────────────────────────────────────┐                   │
-│   │       Claude が Edit ツールを使用    │                   │
-│   └─────────────────────────────────────┘                   │
-│                     │                                        │
-│                     ▼                                        │
-│   ┌─────────────────────────────────────┐                   │
-│   │    PostToolUse フックがトリガー      │◄── hooks.json    │
-│   │    → track-achievement.sh            │                   │
-│   └─────────────────────────────────────┘                   │
-│                     │                                        │
-│         ┌──────────┴──────────┐                             │
-│         ▼                     ▼                             │
-│   ┌───────────┐        ┌───────────┐                        │
-│   │  マッチ！  │        │ マッチなし │                       │
-│   │           │        │           │                        │
-│   │ 解除      │        │ 継続      │                        │
-│   │ 通知      │        └───────────┘                        │
-│   │ 保存      │                                              │
-│   └───────────┘                                              │
-│                                                              │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### プラグイン構造
-
-```
-~/.claude/plugins/local/claude-code-achievements/
-├── .claude-plugin/
-│   └── plugin.json          # プラグインメタデータ
-├── hooks/
-│   ├── hooks.json           # フック定義 (PostToolUse, Stop)
-│   ├── track-achievement.sh # メイン追跡ロジック
-│   └── track-stop.sh        # セッション終了ハンドラー
-├── commands/
-│   ├── achievements.md      # /achievements コマンド
-│   └── achievements-settings.md
-├── scripts/
-│   ├── show-achievements.sh # 表示 UI
-│   └── show-notification.sh # 通知ハンドラー
-└── data/
-    ├── achievements.json    # アチーブメント定義
-    └── i18n/
-        ├── en.json          # English
-        ├── zh.json          # 中文
-        ├── es.json          # Español
-        ├── ko.json          # 한국어
-        └── ja.json          # 日本語
-```
-
-### フックの仕組み
-
-プラグインは Claude Code に 2 つのフックを登録します：
-
-| フック | トリガー | 目的 |
-|--------|----------|------|
-| `PostToolUse` | ツール実行後 | アチーブメント条件の確認 |
-| `Stop` | セッション終了時 | セッション統計の保存 |
-
-### コマンドの仕組み
-
-スラッシュコマンド（`/achievements`）は `~/.claude/commands/` にある**マークダウンファイル**として実装されています。
-
----
-
-## 通知
-
-インストール時にシステム通知が自動検出されます：
-
-| OS | 方法 | サウンド |
-|----|------|----------|
-| macOS | `osascript` | Glass |
-| Linux | `notify-send` | システムデフォルト |
-| Windows | PowerShell | システムデフォルト |
-| フォールバック | ターミナル | なし |
-
-### Linux で notify-send をインストール
-
-```bash
-# Ubuntu/Debian
-sudo apt install libnotify-bin
-
-# Fedora
-sudo dnf install libnotify
-
-# Arch
-sudo pacman -S libnotify
+/achievements basics    # 🌱 はじめに
+/achievements workflow  # ⚡ ワークフロー
+/achievements tools     # 🔧 パワーツール
+/achievements mastery   # 👑 マスタリー
 ```
 
 ---
 
-## 設定
+## 🔔 通知
 
-設定は `~/.claude/achievements/state.json` に保存されます：
+実績解除時にすぐにお知らせ！
 
-```json
-{
-  "settings": {
-    "language": "ja",
-    "notifications": true,
-    "notification_style": "system"
-  },
-  "achievements": {},
-  "counters": {}
-}
-```
-
-| 設定 | 値 | 説明 |
-|------|-----|------|
-| `language` | `"en"`, `"zh"`, `"es"`, `"ko"`, `"ja"` | UI 言語 |
-| `notifications` | `true`, `false` | アラートの有効/無効 |
-| `notification_style` | `"system"`, `"terminal"`, `"both"` | アラート方法 |
+| プラットフォーム | スタイル |
+|------------------|----------|
+| 🍎 macOS | ネイティブ通知 + サウンド |
+| 🐧 Linux | システム通知 |
+| 🪟 Windows | トースト通知 |
+| 💻 フォールバック | ターミナル通知 |
 
 ---
 
-## トラブルシューティング
+## 🛠️ 仕組み
 
-<details>
-<summary><b>アチーブメントが解除されない？</b></summary>
-
-```bash
-# プラグインがインストールされているか確認
-ls ~/.claude/plugins/local/claude-code-achievements/
-
-# 状態ファイルが存在するか確認
-cat ~/.claude/achievements/state.json
-
-# インストール後に Claude Code を再起動してフックをロード
+```
+   あなた: "設定ファイルを編集して"
+              │
+              ▼
+   ┌─────────────────────┐
+   │  Claude が Edit 使用 │
+   └─────────────────────┘
+              │
+              ▼
+   ┌─────────────────────┐
+   │  🎯 フック発動      │──▶ 実績チェック
+   └─────────────────────┘
+              │
+       ┌──────┴──────┐
+       ▼             ▼
+   ┌───────┐    ┌────────┐
+   │ 🏆 +1 │    │  なし  │
+   │ 解除! │    │  続行  │
+   └───────┘    └────────┘
 ```
 
-</details>
+プラグインは Claude Code のイベントシステムに接続します。すべてのツール使用が追跡され、マイルストーンに達すると報酬を獲得！
 
-<details>
-<summary><b>進捗をリセット</b></summary>
+---
 
+## 🌍 対応言語
+
+- 🇺🇸 English
+- 🇨🇳 中文
+- 🇪🇸 Español
+- 🇰🇷 한국어
+- 🇯🇵 日本語
+
+`/achievements-settings` でいつでも変更可能
+
+---
+
+## 📂 あなたの進捗
+
+すべての進捗はローカルに保存されます：
+
+```
+~/.claude/achievements/state.json
+```
+
+旅をやり直すには：
 ```bash
 rm ~/.claude/achievements/state.json
 ```
 
-</details>
-
-<details>
-<summary><b>プラグインを再インストール</b></summary>
-
-```bash
-npx claude-code-achievements@latest
-```
-
-</details>
-
 ---
 
-## 貢献
+## 🤝 コントリビュート
 
-貢献を歓迎します！アイデア：
+新しい実績のアイデアがありますか？バグを見つけましたか？コントリビュート大歓迎！
 
-- 新しいアチーブメント
-- 新しい言語翻訳
-- UI の改善
-- バグ修正
-
-## ライセンス
-
-MIT © [subinium](https://github.com/subinium)
+- 🏆 新しい実績を提案
+- 🌍 翻訳を追加
+- 🐛 問題を報告
+- ⭐ スターをつけてね！
 
 ---
 
 <div align="center">
 
-**Happy coding!**
+### 旅を始める準備はできましたか？
+
+```bash
+npx claude-code-achievements
+```
+
+**レベルアップ。実績解除。楽しくコーディング！**
+
+---
+
+MIT © [subinium](https://github.com/subinium)
 
 </div>
