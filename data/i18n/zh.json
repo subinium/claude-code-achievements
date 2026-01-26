@@ -157,6 +157,21 @@
       "name": "插件探索者",
       "description": "从市场安装插件",
       "tip": "使用 /plugin 从 claude-plugins-official 安装插件，扩展 Claude 的能力！"
+    },
+    "task_master": {
+      "name": "任务大师",
+      "description": "使用任务管理工具",
+      "tip": "TaskCreate、TaskUpdate、TaskList 帮助你管理复杂的多步骤任务。项目管理的好帮手！"
+    },
+    "background_runner": {
+      "name": "多任务处理者",
+      "description": "在后台运行命令",
+      "tip": "使用 run_in_background=true 运行长任务同时继续工作。稍后用 TaskOutput 查看结果！"
+    },
+    "pr_creator": {
+      "name": "PR 冠军",
+      "description": "使用 Claude 创建 Pull Request",
+      "tip": "使用 'gh pr create' 直接从 Claude 创建 PR。代码审查工作流的利器！"
     }
   }
 }

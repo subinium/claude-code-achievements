@@ -1,6 +1,6 @@
 {
   "name": "claude-code-achievements",
-  "version": "1.2.4",
+  "version": "1.3.0",
   "description": "Steam-style achievement system for Claude Code - gamify your coding journey!",
   "author": "subinium",
   "license": "MIT",

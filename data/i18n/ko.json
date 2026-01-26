@@ -157,6 +157,21 @@
       "name": "플러그인 탐험가",
       "description": "마켓플레이스에서 플러그인 설치",
       "tip": "/plugin으로 claude-plugins-official에서 플러그인을 설치하세요. Claude의 능력을 확장!"
+    },
+    "task_master": {
+      "name": "태스크 마스터",
+      "description": "태스크 관리 도구 사용",
+      "tip": "TaskCreate, TaskUpdate, TaskList로 복잡한 다단계 작업을 관리하세요. 프로젝트 관리에 최적!"
+    },
+    "background_runner": {
+      "name": "멀티태스커",
+      "description": "백그라운드에서 명령 실행",
+      "tip": "run_in_background=true로 긴 작업을 실행하면서 다른 일을 계속할 수 있어요. TaskOutput으로 결과 확인!"
+    },
+    "pr_creator": {
+      "name": "PR 챔피언",
+      "description": "Claude와 함께 풀 리퀘스트 생성",
+      "tip": "'gh pr create'로 Claude에서 직접 PR을 만드세요. 코드 리뷰 워크플로우에 최적!"
     }
   }
 }

@@ -30,7 +30,7 @@
 
 Learning Claude Code is a journey. This plugin turns that journey into a **game**.
 
-- 🏆 **26 Achievements** to unlock across 4 skill trees
+- 🏆 **29 Achievements** to unlock across 4 skill trees
 - 🔔 **Real-time notifications** when you level up
 - 📊 **Track your mastery** from beginner to expert
 - 🌍 **5 Languages** supported
@@ -62,7 +62,7 @@ That's it. Start coding and watch the achievements roll in!
 <td width="25%" align="center">
 
 ### ⚡ Workflow
-**8 Achievements**
+**10 Achievements**
 
 *Work smarter*
 
@@ -70,7 +70,7 @@ That's it. Start coding and watch the achievements roll in!
 <td width="25%" align="center">
 
 ### 🔧 Power Tools
-**9 Achievements**
+**10 Achievements**
 
 *Unlock abilities*
 
@@ -108,11 +108,13 @@ That's it. Start coding and watch the achievements roll in!
 | | Achievement | Quest |
 |:--:|-------------|-------|
 | 📋 | **Task Planner** | Use TodoWrite for task tracking |
+| 📋 | **Task Master** | Use TaskCreate/TaskUpdate/TaskList |
 | 🎯 | **Strategic Thinker** | Enter Plan mode (`Shift+Tab` × 2) |
 | 🗣️ | **Communicator** | Have Claude ask you a clarifying question |
 | 🌍 | **Global Curator** | Set up global `~/.claude/CLAUDE.md` |
 | 📦 | **Version Controller** | Make a commit with Claude |
 | 🚀 | **Ship It!** | Push code to remote |
+| 🔀 | **PR Champion** | Create a pull request with `gh pr create` |
 | 🧪 | **Quality Guardian** | Run tests |
 | 🚦 | **CI/CD Pioneer** | Create GitHub Actions workflow |
 
@@ -127,6 +129,7 @@ That's it. Start coding and watch the achievements roll in!
 | 🎨 | **Visual Inspector** | Analyze an image or screenshot |
 | 📡 | **Doc Hunter** | Fetch and analyze a web page |
 | 🤖 | **Delegation Master** | Spawn a sub-agent with Task tool |
+| ⏳ | **Multitasker** | Run a command in the background |
 | 🔌 | **MCP Pioneer** | Use any MCP tool |
 | 🌐 | **Web Explorer** | Search the web |
 | ⚙️ | **Customizer** | Modify Claude Code settings |

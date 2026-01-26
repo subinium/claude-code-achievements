@@ -157,6 +157,21 @@
       "name": "Explorador de Plugins",
       "description": "Instalar un plugin del marketplace",
       "tip": "Usa /plugin para instalar desde claude-plugins-official. Extiende las capacidades de Claude."
+    },
+    "task_master": {
+      "name": "Maestro de Tareas",
+      "description": "Usar herramientas de gestión de tareas",
+      "tip": "TaskCreate, TaskUpdate, TaskList te ayudan a organizar tareas complejas de múltiples pasos. ¡Ideal para gestión de proyectos!"
+    },
+    "background_runner": {
+      "name": "Multitarea",
+      "description": "Ejecutar un comando en segundo plano",
+      "tip": "Usa run_in_background=true para ejecutar tareas largas mientras continúas trabajando. ¡Verifica el resultado después con TaskOutput!"
+    },
+    "pr_creator": {
+      "name": "Campeón de PR",
+      "description": "Crear un pull request con Claude",
+      "tip": "Usa 'gh pr create' para crear pull requests directamente desde Claude. ¡Ideal para flujos de revisión de código!"
     }
   }
 }

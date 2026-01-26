@@ -277,7 +277,7 @@ async function install() {
   console.log(`${CYAN}│${RESET}                                                              ${CYAN}│${RESET}`);
   console.log(`${CYAN}╰──────────────────────────────────────────────────────────────╯${RESET}`);
   console.log('');
-  console.log(`${DIM}  26 achievements await. Start coding to unlock them!${RESET}`);
+  console.log(`${DIM}  29 achievements await. Start coding to unlock them!${RESET}`);
   console.log('');
   console.log(`  ${BOLD}🎮 Happy coding!${RESET}`);
   console.log('');

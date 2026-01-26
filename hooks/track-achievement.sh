@@ -43,15 +43,11 @@ unlock_achievement() {
     local achievement_id="$1"
     local trigger="$2"
     local timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-    local lock_file="${STATE_FILE}.lock"
+    local temp_file=$(mktemp)
 
-    # Use flock for atomic file operations (prevent race conditions)
-    (
-        flock -x 200 || exit 1
-        local temp_file=$(mktemp)
-        jq ".achievements[\"${achievement_id}\"] = {\"unlocked\": true, \"unlockedAt\": \"${timestamp}\"}" "${STATE_FILE}" > "${temp_file}"
-        mv "${temp_file}" "${STATE_FILE}"
-    ) 200>"${lock_file}"
+    # Update state file (simple approach, works on macOS and Linux)
+    jq ".achievements[\"${achievement_id}\"] = {\"unlocked\": true, \"unlockedAt\": \"${timestamp}\"}" "${STATE_FILE}" > "${temp_file}"
+    mv "${temp_file}" "${STATE_FILE}"
 
     "${PLUGIN_ROOT}/scripts/show-notification.sh" "${achievement_id}" "${trigger}"
 }
@@ -212,6 +208,14 @@ check_achievements() {
 
         Bash)
             COMMAND=$(echo "$TOOL_INPUT" | jq -r '.command // empty')
+            RUN_IN_BG=$(echo "$TOOL_INPUT" | jq -r '.run_in_background // false')
+
+            # background_runner
+            if [[ "${RUN_IN_BG}" == "true" ]]; then
+                if ! is_unlocked "background_runner"; then
+                    unlock_achievement "background_runner" "Ran command in background"
+                fi
+            fi
 
             # git_commit (git add/commit)
             if [[ "${COMMAND}" =~ git[[:space:]]+(add|commit) ]]; then
@@ -224,6 +228,13 @@ check_achievements() {
             if [[ "${COMMAND}" =~ git[[:space:]]+push ]]; then
                 if ! is_unlocked "git_push"; then
                     unlock_achievement "git_push" "Pushed changes to remote"
+                fi
+            fi
+
+            # pr_creator (gh pr create)
+            if [[ "${COMMAND}" =~ gh[[:space:]]+pr[[:space:]]+create ]]; then
+                if ! is_unlocked "pr_creator"; then
+                    unlock_achievement "pr_creator" "Created pull request with gh"
                 fi
             fi
 
@@ -240,19 +251,35 @@ check_achievements() {
             ;;
 
         Task)
+            RUN_IN_BG=$(echo "$TOOL_INPUT" | jq -r '.run_in_background // false')
+            # background_runner (Task tool can also run in background)
+            if [[ "${RUN_IN_BG}" == "true" ]]; then
+                if ! is_unlocked "background_runner"; then
+                    unlock_achievement "background_runner" "Ran task in background"
+                fi
+            fi
             if ! is_unlocked "multi_agent"; then
                 unlock_achievement "multi_agent" "Spawned a sub-agent with Task"
             fi
             ;;
 
+        TaskCreate|TaskUpdate|TaskList)
+            # task_master
+            if ! is_unlocked "task_master"; then
+                unlock_achievement "task_master" "Used ${TOOL_NAME} for task management"
+            fi
+            ;;
+
         Skill)
             SKILL_NAME=$(echo "$TOOL_INPUT" | jq -r '.skill // empty')
-            # ralph_starter
+            # ralph_starter (custom skill, detected via Skill tool)
             if [[ "${SKILL_NAME}" =~ ralph-loop|ralph ]]; then
                 if ! is_unlocked "ralph_starter"; then
                     unlock_achievement "ralph_starter" "Started autonomous Ralph Loop"
                 fi
             fi
+            # Note: Built-in CLI commands (/doctor, /stats, /context, /vim, /model, /teleport, /rewind)
+            # are detected via UserPromptSubmit hook in track-prompt.sh
             ;;
 
         WebSearch)

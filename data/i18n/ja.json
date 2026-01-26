@@ -157,6 +157,21 @@
       "name": "プラグイン探検家",
       "description": "マーケットプレイスからプラグインをインストール",
       "tip": "/plugin で claude-plugins-official からインストール。Claude の機能を拡張！"
+    },
+    "task_master": {
+      "name": "タスクマスター",
+      "description": "タスク管理ツールを使用",
+      "tip": "TaskCreate、TaskUpdate、TaskList で複雑な複数ステップタスクを管理。プロジェクト管理に最適！"
+    },
+    "background_runner": {
+      "name": "マルチタスカー",
+      "description": "バックグラウンドでコマンドを実行",
+      "tip": "run_in_background=true で長いタスクを実行しながら作業を続行。TaskOutput で後から確認！"
+    },
+    "pr_creator": {
+      "name": "PRチャンピオン",
+      "description": "Claude でプルリクエストを作成",
+      "tip": "'gh pr create' で Claude から直接 PR を作成。コードレビューワークフローに最適！"
     }
   }
 }

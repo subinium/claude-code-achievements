@@ -30,7 +30,7 @@
 
 Aprender Claude Code es un viaje. Este plugin convierte ese viaje en un **juego**.
 
-- 🏆 **26 Logros** en 4 árboles de habilidades
+- 🏆 **29 Logros** en 4 árboles de habilidades
 - 🔔 **Notificaciones en tiempo real** cuando subes de nivel
 - 📊 **Rastrea tu maestría** de principiante a experto
 - 🌍 **5 Idiomas** soportados
@@ -62,7 +62,7 @@ npx claude-code-achievements
 <td width="25%" align="center">
 
 ### ⚡ Flujo de Trabajo
-**8 Logros**
+**10 Logros**
 
 *Trabaja más inteligente*
 
@@ -70,7 +70,7 @@ npx claude-code-achievements
 <td width="25%" align="center">
 
 ### 🔧 Herramientas Avanzadas
-**9 Logros**
+**10 Logros**
 
 *Desbloquea habilidades*
 
@@ -108,11 +108,13 @@ npx claude-code-achievements
 | | Logro | Misión |
 |:--:|-------|--------|
 | 📋 | **Planificador de Tareas** | Usa TodoWrite para gestionar tareas |
+| 📋 | **Maestro de Tareas** | Usa TaskCreate/TaskUpdate/TaskList |
 | 🎯 | **Pensador Estratégico** | Entra en modo Plan (`Shift+Tab` × 2) |
 | 🗣️ | **Comunicador** | Haz que Claude te haga una pregunta aclaratoria |
 | 🌍 | **Curador Global** | Configura `~/.claude/CLAUDE.md` |
 | 📦 | **Controlador de Versiones** | Haz un commit con Claude |
 | 🚀 | **¡Despliega!** | Haz push al remoto |
+| 🔀 | **Campeón de PR** | Crea PR con `gh pr create` |
 | 🧪 | **Guardián de Calidad** | Ejecuta tests |
 | 🚦 | **Pionero CI/CD** | Crea workflow de GitHub Actions |
 
@@ -127,6 +129,7 @@ npx claude-code-achievements
 | 🎨 | **Inspector Visual** | Analiza una imagen o captura |
 | 📡 | **Cazador de Docs** | Obtén y analiza una página web |
 | 🤖 | **Maestro de Delegación** | Genera un sub-agente con Task |
+| ⏳ | **Multitarea** | Ejecuta comando en segundo plano |
 | 🔌 | **Pionero MCP** | Usa cualquier herramienta MCP |
 | 🌐 | **Explorador Web** | Busca en la web |
 | ⚙️ | **Personalizador** | Modifica configuración de Claude Code |
